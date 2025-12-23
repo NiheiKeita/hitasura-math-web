@@ -67,16 +67,16 @@ const screenshots = ['SCREEN 01', 'SCREEN 02', 'SCREEN 03', 'SCREEN 04']
 export const Dashboard = React.memo(function Dashboard() {
     return (
         <div
-            className="min-h-screen bg-white text-[#0B1E4B]"
+            className="min-h-screen bg-white text-[#2B3550]"
             style={{ fontFamily: '"Zen Kaku Gothic New", "Yu Gothic", sans-serif' }}
         >
             <header className="sticky top-0 z-40 bg-white/90 backdrop-blur">
                 <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-10">
-                    <div className="text-sm font-semibold tracking-wide text-[#1C2E63]">
+                    <div className="text-sm font-semibold tracking-wide text-[#34405D]">
                         ひたすら数学
                     </div>
                     <div className="flex items-center gap-2">
-                        <button className="rounded-full border border-[#D9E2F2] px-4 py-2 text-xs font-semibold text-[#1C2E63]">
+                        <button className="rounded-full border border-[#D9E2F2] px-4 py-2 text-xs font-semibold text-[#34405D]">
                             無料で遊ぶ
                         </button>
                         <button className="rounded-full bg-[#0B1E4B] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-[#0B1E4B]/20">
@@ -98,24 +98,25 @@ export const Dashboard = React.memo(function Dashboard() {
                     />
                     <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:px-10 md:py-24">
                         <div className="space-y-5">
-                            <p className="text-sm font-medium tracking-[0.2em] text-[#6C7BA5]">
+                            <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
                                 Math game
                             </p>
-                            <h1 className="text-4xl font-extrabold leading-tight md:text-5xl">
-                                ひたすら解く。ただそれだけ。
+                            <h1 className="text-4xl font-extrabold leading-[1.35] md:text-6xl md:leading-[1.25]">
+                                <span className="block md:mb-4">ひたすら解く。</span>
+                                <span className="block">それだけ。</span>
                             </h1>
-                            <p className="text-base text-[#42507A] md:text-lg">
+                            <p className="text-base text-[#6A7893] md:text-lg">
                                 正解する感覚に集中する、数学ゲーム。
                             </p>
                             <div className="flex flex-wrap items-center gap-3 pt-2">
                                 <button className="rounded-full bg-[#0B1E4B] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0B1E4B]/20">
                                     今すぐ遊ぶ
                                 </button>
-                                <button className="rounded-full border border-[#D9E2F2] px-6 py-3 text-sm font-semibold text-[#0B1E4B]">
+                                <button className="rounded-full border border-[#D9E2F2] px-6 py-3 text-sm font-semibold text-[#2B3550]">
                                     無料で遊ぶ
                                 </button>
                             </div>
-                            <div className="flex items-center gap-2 text-xs text-[#7B89AD]">
+                            <div className="flex items-center gap-2 text-xs text-[#8793AD]">
                                 <span className="inline-flex h-2 w-2 rounded-full bg-[#36D6B5]" />
                                 正解の気持ちよさに集中
                             </div>
@@ -131,13 +132,13 @@ export const Dashboard = React.memo(function Dashboard() {
                                         </span>
                                     </div>
                                     <div className="rounded-2xl bg-white p-4">
-                                        <div className="text-xs text-[#7B89AD]">
+                                        <div className="text-xs text-[#8793AD]">
                                             次の問題
                                         </div>
-                                        <div className="mt-2 text-2xl font-bold text-[#0B1E4B]">
+                                        <div className="mt-2 text-2xl font-bold text-[#2B3550]">
                                             18 × 7
                                         </div>
-                                        <div className="mt-4 grid grid-cols-2 gap-2 text-sm text-[#0B1E4B]">
+                                        <div className="mt-4 grid grid-cols-2 gap-2 text-sm text-[#2B3550]">
                                             {['126', '112', '134', '140'].map((value) => (
                                                 <div
                                                     key={value}
@@ -153,7 +154,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="mt-6 flex items-center justify-center text-xs text-[#6C7BA5] motion-safe:animate-float-slow">
+                            <div className="motion-safe:animate-float-slow mt-6 flex items-center justify-center text-xs text-[#8793AD]">
                                 <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-[#36D6B5]" />
                                 スクロール
                             </div>
@@ -163,7 +164,7 @@ export const Dashboard = React.memo(function Dashboard() {
 
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10">
-                        <p className="text-sm font-medium tracking-[0.2em] text-[#6C7BA5]">
+                        <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
                             FEEL
                         </p>
                         <h2 className="mt-2 text-3xl font-bold">気持ちいい数学</h2>
@@ -180,7 +181,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                     </span>
                                     <h3 className="text-lg font-semibold">{item.title}</h3>
                                 </div>
-                                <p className="mt-3 text-sm text-[#42507A]">{item.body}</p>
+                                <p className="mt-3 text-sm text-[#6A7893]">{item.body}</p>
                             </div>
                         ))}
                     </div>
@@ -188,7 +189,7 @@ export const Dashboard = React.memo(function Dashboard() {
 
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10">
-                        <p className="text-sm font-medium tracking-[0.2em] text-[#6C7BA5]">
+                        <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
                             MODES
                         </p>
                         <h2 className="mt-2 text-3xl font-bold">遊び方を選ぶ</h2>
@@ -200,7 +201,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                 className="rounded-3xl border border-[#E5EAF5] bg-white p-6 shadow-[0_12px_30px_rgba(11,30,75,0.06)]"
                             >
                                 <h3 className="text-lg font-semibold">{mode.title}</h3>
-                                <p className="mt-3 text-sm text-[#42507A]">{mode.body}</p>
+                                <p className="mt-3 text-sm text-[#6A7893]">{mode.body}</p>
                             </div>
                         ))}
                     </div>
@@ -209,7 +210,7 @@ export const Dashboard = React.memo(function Dashboard() {
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10 flex items-end justify-between">
                         <div>
-                            <p className="text-sm font-medium tracking-[0.2em] text-[#6C7BA5]">
+                            <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
                                 CONTENTS
                             </p>
                             <h2 className="mt-2 text-3xl font-bold">数学の気持ちよさ</h2>
@@ -232,7 +233,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                         </span>
                                     ) : null}
                                 </div>
-                                <p className="mt-3 text-sm text-[#42507A]">{item.meta}</p>
+                                <p className="mt-3 text-sm text-[#6A7893]">{item.meta}</p>
                             </div>
                         ))}
                     </div>
@@ -240,12 +241,12 @@ export const Dashboard = React.memo(function Dashboard() {
 
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-8">
-                        <p className="text-sm font-medium tracking-[0.2em] text-[#6C7BA5]">
+                        <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
                             SCREENSHOT
                         </p>
                         <h2 className="mt-2 text-3xl font-bold">画面の流れ</h2>
                     </div>
-                    <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pr-2 text-sm text-[#0B1E4B]">
+                    <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pr-2 text-sm text-[#2B3550]">
                         {screenshots.map((label) => (
                             <div
                                 key={label}
@@ -256,7 +257,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                         {label}
                                     </div>
                                 </div>
-                                <div className="mt-3 text-xs text-[#6C7BA5]">
+                                <div className="mt-3 text-xs text-[#8793AD]">
                                     スワイプでチェック
                                 </div>
                             </div>
@@ -266,7 +267,7 @@ export const Dashboard = React.memo(function Dashboard() {
 
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10">
-                        <p className="text-sm font-medium tracking-[0.2em] text-[#6C7BA5]">
+                        <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
                             COMING SOON
                         </p>
                         <h2 className="mt-2 text-3xl font-bold">これから増える</h2>
@@ -278,7 +279,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                 className="rounded-3xl border border-[#E5EAF5] bg-white p-6 shadow-[0_12px_30px_rgba(11,30,75,0.06)]"
                             >
                                 <h3 className="text-lg font-semibold">{item.title}</h3>
-                                <p className="mt-3 text-sm text-[#42507A]">{item.body}</p>
+                                <p className="mt-3 text-sm text-[#6A7893]">{item.body}</p>
                             </div>
                         ))}
                     </div>
@@ -289,28 +290,28 @@ export const Dashboard = React.memo(function Dashboard() {
                         <h2 className="text-3xl font-extrabold">
                             無料で遊ぶ
                         </h2>
-                        <p className="mt-3 text-sm text-[#42507A]">
+                        <p className="mt-3 text-sm text-[#6A7893]">
                             ひらめきの気持ちよさを、今すぐ。
                         </p>
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
                             <button className="rounded-full bg-[#0B1E4B] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0B1E4B]/20">
                                 今すぐ遊ぶ
                             </button>
-                            <button className="rounded-full border border-[#D9E2F2] bg-white px-6 py-3 text-sm font-semibold text-[#0B1E4B]">
+                            <button className="rounded-full border border-[#D9E2F2] bg-white px-6 py-3 text-sm font-semibold text-[#2B3550]">
                                 App Store
                             </button>
-                            <button className="rounded-full border border-[#D9E2F2] bg-white px-6 py-3 text-sm font-semibold text-[#0B1E4B]">
+                            <button className="rounded-full border border-[#D9E2F2] bg-white px-6 py-3 text-sm font-semibold text-[#2B3550]">
                                 Google Play
                             </button>
                         </div>
-                        <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs text-[#6C7BA5]">
-                            <a className="hover:text-[#0B1E4B]" href="#">
+                        <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs text-[#8793AD]">
+                            <a className="hover:text-[#2B3550]" href="#">
                                 X
                             </a>
-                            <a className="hover:text-[#0B1E4B]" href="#">
+                            <a className="hover:text-[#2B3550]" href="#">
                                 TikTok
                             </a>
-                            <a className="hover:text-[#0B1E4B]" href="#">
+                            <a className="hover:text-[#2B3550]" href="#">
                                 YouTube
                             </a>
                         </div>
