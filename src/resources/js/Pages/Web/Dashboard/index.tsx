@@ -3,45 +3,45 @@ import React from 'react'
 
 const feelItems = [
     {
-        title: '正解するとちょっと嬉しい',
-        body: '小さな達成感が、次の一問を呼ぶ。',
+        title: '正解の快感',
+        body: '解けるたびに、気持ちよさが増える。',
     },
     {
-        title: 'テンポよく次へ進める',
-        body: '迷わず解いて、気持ちよく続ける。',
+        title: 'テンポ',
+        body: '次へ、次へ。手が止まらない。',
     },
     {
-        title: '考えることに集中できる',
-        body: '余計な要素を削ぎ落とした画面。',
+        title: '集中',
+        body: '画面はシンプル。数学だけに没頭。',
     },
 ]
 
 const modes = [
     {
-        title: '無限モード',
-        body: '終わるまでひたすら。',
+        title: '無限',
+        body: '終わりがないから続く。',
     },
     {
         title: '10問タイムアタック',
-        body: 'スピード勝負で集中力全開。',
+        body: '短時間で燃えるスピード勝負。',
     },
     {
-        title: '難易度',
-        body: 'easy / normal / hard を選べる。',
+        title: 'easy / normal / hard',
+        body: '好みの強さで挑戦。',
     },
 ]
 
 const contents = [
     {
         title: '因数分解',
-        meta: '基本からサクサク。',
+        meta: '基本を軽快に。',
     },
     {
         title: '素因数分解',
-        meta: '分解の気持ちよさ。',
+        meta: '分解の手触り。',
     },
     {
-        title: '微分 / 積分',
+        title: '微分・積分',
         meta: 'COMING SOON',
         soon: true,
     },
@@ -50,36 +50,36 @@ const contents = [
 const comingSoon = [
     {
         title: 'Ranking',
-        body: 'ライバルと比べる楽しさ。',
+        body: '自己ベストと競う。',
     },
     {
         title: 'Calendar',
-        body: '毎日の積み上げが見える。',
+        body: '積み上げが見える。',
     },
     {
         title: 'More modes',
-        body: '遊び方がどんどん増える。',
+        body: '遊び方が広がる。',
     },
 ]
 
-const screenshots = ['SCREEN 01', 'SCREEN 02', 'SCREEN 03', 'SCREEN 04']
+const screenshots = ['PLAY 01', 'PLAY 02', 'PLAY 03', 'PLAY 04']
 
 export const Dashboard = React.memo(function Dashboard() {
     return (
         <div
-            className="min-h-screen bg-white text-[#2B3550]"
+            className="min-h-screen bg-white text-[#64748B]"
             style={{ fontFamily: '"Zen Kaku Gothic New", "Yu Gothic", sans-serif' }}
         >
             <header className="sticky top-0 z-40 bg-white/90 backdrop-blur">
                 <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-10">
-                    <div className="text-sm font-semibold tracking-wide text-[#34405D]">
+                    <div className="text-sm font-semibold tracking-wide text-[#1E3A8A]">
                         ひたすら数学
                     </div>
                     <div className="flex items-center gap-2">
-                        <button className="rounded-full border border-[#D9E2F2] px-4 py-2 text-xs font-semibold text-[#34405D]">
+                        <button className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#1E3A8A] shadow-sm">
                             無料で遊ぶ
                         </button>
-                        <button className="rounded-full bg-[#0B1E4B] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-[#0B1E4B]/20">
+                        <button className="rounded-full bg-[#2DD4BF] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-[#2DD4BF]/30">
                             今すぐ遊ぶ
                         </button>
                     </div>
@@ -88,74 +88,62 @@ export const Dashboard = React.memo(function Dashboard() {
 
             <main>
                 <section className="relative overflow-hidden">
-                    <div
-                        className="absolute inset-0 opacity-70"
-                        style={{
-                            backgroundImage:
-                                'radial-gradient(circle at 1px 1px, rgba(11,30,75,0.12) 1px, transparent 0)',
-                            backgroundSize: '22px 22px',
-                        }}
-                    />
+                    <div className="pointer-events-none absolute inset-0">
+                        <div className="absolute -left-20 top-10 h-56 w-56 rounded-full bg-[#1E3A8A]/5" />
+                        <div className="absolute right-0 top-32 h-40 w-40 rounded-full bg-[#1E3A8A]/5" />
+                    </div>
                     <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:px-10 md:py-24">
                         <div className="space-y-5">
-                            <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
+                            <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
                                 Math game
                             </p>
-                            <h1 className="text-4xl font-extrabold leading-[1.35] md:text-6xl md:leading-[1.25]">
-                                <span className="block md:mb-4">ひたすら解く。</span>
-                                <span className="block">それだけ。</span>
+                            <h1 className="text-4xl font-extrabold leading-[1.25] text-[#1E3A8A] md:text-6xl md:leading-[1.2]">
+                                ひたすら解く。ただそれだけ。
                             </h1>
-                            <p className="text-base text-[#6A7893] md:text-lg">
-                                正解する感覚に集中する、数学ゲーム。
+                            <p className="text-base text-[#64748B] md:text-lg">
+                                短い計算で、ひらめきが続く。タップするだけの数学ゲーム。
                             </p>
                             <div className="flex flex-wrap items-center gap-3 pt-2">
-                                <button className="rounded-full bg-[#0B1E4B] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0B1E4B]/20">
+                                <button className="rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30">
                                     今すぐ遊ぶ
                                 </button>
-                                <button className="rounded-full border border-[#D9E2F2] px-6 py-3 text-sm font-semibold text-[#2B3550]">
+                                <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1E3A8A] shadow-sm">
                                     無料で遊ぶ
                                 </button>
-                            </div>
-                            <div className="flex items-center gap-2 text-xs text-[#8793AD]">
-                                <span className="inline-flex h-2 w-2 rounded-full bg-[#36D6B5]" />
-                                正解の気持ちよさに集中
                             </div>
                         </div>
 
                         <div className="mx-auto w-full max-w-sm">
-                            <div className="relative rounded-[30px] border border-[#E5EAF5] bg-white p-3 shadow-2xl shadow-[#0B1E4B]/10">
-                                <div className="rounded-[24px] bg-gradient-to-br from-[#F7FAFF] to-[#E8FAF4] p-4">
-                                    <div className="mb-3 flex items-center justify-between text-xs text-[#6C7BA5]">
+                            <div className="relative rounded-[32px] bg-white p-3 shadow-2xl shadow-[#1E3A8A]/10">
+                                <div className="rounded-[26px] bg-white p-4 shadow-inner shadow-black/5">
+                                    <div className="mb-3 flex items-center justify-between text-xs text-[#64748B]">
                                         <span>STREAK 12</span>
-                                        <span className="rounded-full bg-[#36D6B5]/15 px-2 py-0.5 text-[#1A7F6B]">
-                                            正解
+                                        <span className="rounded-full bg-[#E5E7EB] px-2 py-0.5 text-[#1E3A8A]">
+                                            READY
                                         </span>
                                     </div>
-                                    <div className="rounded-2xl bg-white p-4">
-                                        <div className="text-xs text-[#8793AD]">
+                                    <div className="rounded-2xl bg-white p-4 shadow-sm">
+                                        <div className="text-xs text-[#64748B]">
                                             次の問題
                                         </div>
-                                        <div className="mt-2 text-2xl font-bold text-[#2B3550]">
+                                        <div className="mt-2 text-2xl font-bold text-[#1E3A8A]">
                                             18 × 7
                                         </div>
-                                        <div className="mt-4 grid grid-cols-2 gap-2 text-sm text-[#2B3550]">
+                                        <div className="mt-4 grid grid-cols-2 gap-2 text-sm text-[#1E3A8A]">
                                             {['126', '112', '134', '140'].map((value) => (
                                                 <div
                                                     key={value}
-                                                    className="rounded-xl border border-[#E5EAF5] py-2 text-center"
+                                                    className="rounded-xl bg-white py-2 text-center shadow-sm"
                                                 >
                                                     {value}
                                                 </div>
                                             ))}
                                         </div>
                                     </div>
-                                    <div className="mt-3 h-2 w-full rounded-full bg-white">
-                                        <div className="h-2 w-2/3 rounded-full bg-[#36D6B5]" />
-                                    </div>
                                 </div>
                             </div>
-                            <div className="motion-safe:animate-float-slow mt-6 flex items-center justify-center text-xs text-[#8793AD]">
-                                <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-[#36D6B5]" />
+                            <div className="mt-6 flex items-center justify-center text-xs text-[#64748B]">
+                                <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-[#E5E7EB]" />
                                 スクロール
                             </div>
                         </div>
@@ -164,24 +152,28 @@ export const Dashboard = React.memo(function Dashboard() {
 
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10">
-                        <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
+                        <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
                             FEEL
                         </p>
-                        <h2 className="mt-2 text-3xl font-bold">気持ちいい数学</h2>
+                        <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
+                            気持ちいい数学
+                        </h2>
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
                         {feelItems.map((item, index) => (
                             <div
                                 key={item.title}
-                                className="rounded-3xl border border-[#E5EAF5] bg-white p-6 shadow-[0_10px_30px_rgba(11,30,75,0.08)]"
+                                className="rounded-3xl bg-white p-6 shadow-[0_12px_30px_rgba(30,58,138,0.08)]"
                             >
                                 <div className="flex items-center gap-3">
-                                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8FAF4] text-sm font-bold text-[#1A7F6B]">
+                                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E5E7EB] text-sm font-bold text-[#1E3A8A]">
                                         0{index + 1}
                                     </span>
-                                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                                    <h3 className="text-lg font-semibold text-[#1E3A8A]">
+                                        {item.title}
+                                    </h3>
                                 </div>
-                                <p className="mt-3 text-sm text-[#6A7893]">{item.body}</p>
+                                <p className="mt-3 text-sm text-[#64748B]">{item.body}</p>
                             </div>
                         ))}
                     </div>
@@ -189,19 +181,23 @@ export const Dashboard = React.memo(function Dashboard() {
 
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10">
-                        <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
+                        <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
                             MODES
                         </p>
-                        <h2 className="mt-2 text-3xl font-bold">遊び方を選ぶ</h2>
+                        <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
+                            遊び方を選ぶ
+                        </h2>
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
                         {modes.map((mode) => (
                             <div
                                 key={mode.title}
-                                className="rounded-3xl border border-[#E5EAF5] bg-white p-6 shadow-[0_12px_30px_rgba(11,30,75,0.06)]"
+                                className="rounded-3xl bg-white p-6 shadow-[0_12px_30px_rgba(30,58,138,0.06)]"
                             >
-                                <h3 className="text-lg font-semibold">{mode.title}</h3>
-                                <p className="mt-3 text-sm text-[#6A7893]">{mode.body}</p>
+                                <h3 className="text-lg font-semibold text-[#1E3A8A]">
+                                    {mode.title}
+                                </h3>
+                                <p className="mt-3 text-sm text-[#64748B]">{mode.body}</p>
                             </div>
                         ))}
                     </div>
@@ -210,12 +206,14 @@ export const Dashboard = React.memo(function Dashboard() {
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10 flex items-end justify-between">
                         <div>
-                            <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
+                            <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
                                 CONTENTS
                             </p>
-                            <h2 className="mt-2 text-3xl font-bold">数学の気持ちよさ</h2>
+                            <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
+                                数学の気持ちよさ
+                            </h2>
                         </div>
-                        <span className="rounded-full bg-[#E8FAF4] px-4 py-1 text-xs font-semibold text-[#1A7F6B]">
+                        <span className="rounded-full bg-[#2DD4BF] px-4 py-1 text-xs font-semibold text-white">
                             これから増える
                         </span>
                     </div>
@@ -223,17 +221,19 @@ export const Dashboard = React.memo(function Dashboard() {
                         {contents.map((item) => (
                             <div
                                 key={item.title}
-                                className="rounded-3xl border border-[#E5EAF5] bg-white p-6 shadow-[0_12px_30px_rgba(11,30,75,0.06)]"
+                                className="rounded-3xl bg-white p-6 shadow-[0_12px_30px_rgba(30,58,138,0.06)]"
                             >
                                 <div className="flex items-center justify-between">
-                                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                                    <h3 className="text-lg font-semibold text-[#1E3A8A]">
+                                        {item.title}
+                                    </h3>
                                     {item.soon ? (
-                                        <span className="rounded-full bg-[#0B1E4B] px-3 py-1 text-[10px] font-semibold tracking-[0.15em] text-white">
+                                        <span className="rounded-full bg-[#2DD4BF] px-3 py-1 text-[10px] font-semibold tracking-[0.15em] text-white">
                                             COMING SOON
                                         </span>
                                     ) : null}
                                 </div>
-                                <p className="mt-3 text-sm text-[#6A7893]">{item.meta}</p>
+                                <p className="mt-3 text-sm text-[#64748B]">{item.meta}</p>
                             </div>
                         ))}
                     </div>
@@ -241,23 +241,25 @@ export const Dashboard = React.memo(function Dashboard() {
 
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-8">
-                        <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
+                        <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
                             SCREENSHOT
                         </p>
-                        <h2 className="mt-2 text-3xl font-bold">画面の流れ</h2>
+                        <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
+                            画面の流れ
+                        </h2>
                     </div>
-                    <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pr-2 text-sm text-[#2B3550]">
+                    <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pr-2 text-sm text-[#1E3A8A]">
                         {screenshots.map((label) => (
                             <div
                                 key={label}
-                                className="w-[240px] shrink-0 snap-center rounded-3xl border border-[#E5EAF5] bg-gradient-to-br from-[#F8FAFF] to-[#E8FAF4] p-4 shadow-[0_12px_30px_rgba(11,30,75,0.06)]"
+                                className="w-[240px] shrink-0 snap-center rounded-3xl bg-white p-4 shadow-[0_12px_30px_rgba(30,58,138,0.06)]"
                             >
-                                <div className="aspect-[9/16] w-full rounded-2xl bg-white/80 p-3">
-                                    <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-[#C9D5EA] text-xs text-[#7B89AD]">
+                                <div className="aspect-[9/16] w-full rounded-2xl bg-white p-3 shadow-sm">
+                                    <div className="flex h-full items-center justify-center rounded-2xl bg-white text-xs text-[#64748B] shadow-inner shadow-black/5">
                                         {label}
                                     </div>
                                 </div>
-                                <div className="mt-3 text-xs text-[#8793AD]">
+                                <div className="mt-3 text-xs text-[#64748B]">
                                     スワイプでチェック
                                 </div>
                             </div>
@@ -267,51 +269,55 @@ export const Dashboard = React.memo(function Dashboard() {
 
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10">
-                        <p className="text-sm font-medium tracking-[0.2em] text-[#8793AD]">
+                        <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
                             COMING SOON
                         </p>
-                        <h2 className="mt-2 text-3xl font-bold">これから増える</h2>
+                        <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
+                            これから増える
+                        </h2>
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
                         {comingSoon.map((item) => (
                             <div
                                 key={item.title}
-                                className="rounded-3xl border border-[#E5EAF5] bg-white p-6 shadow-[0_12px_30px_rgba(11,30,75,0.06)]"
+                                className="rounded-3xl bg-white p-6 shadow-[0_12px_30px_rgba(30,58,138,0.06)]"
                             >
-                                <h3 className="text-lg font-semibold">{item.title}</h3>
-                                <p className="mt-3 text-sm text-[#6A7893]">{item.body}</p>
+                                <h3 className="text-lg font-semibold text-[#1E3A8A]">
+                                    {item.title}
+                                </h3>
+                                <p className="mt-3 text-sm text-[#64748B]">{item.body}</p>
                             </div>
                         ))}
                     </div>
                 </section>
 
                 <section className="mx-auto max-w-6xl px-5 pb-20 pt-10 md:px-10">
-                    <div className="rounded-3xl border border-[#D9E2F2] bg-gradient-to-br from-[#F7FAFF] to-[#E8FAF4] p-8 text-center md:p-12">
-                        <h2 className="text-3xl font-extrabold">
+                    <div className="rounded-3xl bg-white p-8 text-center shadow-[0_20px_40px_rgba(30,58,138,0.08)] md:p-12">
+                        <h2 className="text-3xl font-extrabold text-[#1E3A8A]">
                             無料で遊ぶ
                         </h2>
-                        <p className="mt-3 text-sm text-[#6A7893]">
+                        <p className="mt-3 text-sm text-[#64748B]">
                             ひらめきの気持ちよさを、今すぐ。
                         </p>
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
-                            <button className="rounded-full bg-[#0B1E4B] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0B1E4B]/20">
+                            <button className="rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30">
                                 今すぐ遊ぶ
                             </button>
-                            <button className="rounded-full border border-[#D9E2F2] bg-white px-6 py-3 text-sm font-semibold text-[#2B3550]">
+                            <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1E3A8A] shadow-sm">
                                 App Store
                             </button>
-                            <button className="rounded-full border border-[#D9E2F2] bg-white px-6 py-3 text-sm font-semibold text-[#2B3550]">
+                            <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1E3A8A] shadow-sm">
                                 Google Play
                             </button>
                         </div>
-                        <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs text-[#8793AD]">
-                            <a className="hover:text-[#2B3550]" href="#">
+                        <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs text-[#64748B]">
+                            <a className="hover:text-[#1E3A8A]" href="#">
                                 X
                             </a>
-                            <a className="hover:text-[#2B3550]" href="#">
+                            <a className="hover:text-[#1E3A8A]" href="#">
                                 TikTok
                             </a>
-                            <a className="hover:text-[#2B3550]" href="#">
+                            <a className="hover:text-[#1E3A8A]" href="#">
                                 YouTube
                             </a>
                         </div>
