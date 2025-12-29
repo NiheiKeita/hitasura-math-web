@@ -98,7 +98,10 @@ export const Dashboard = React.memo(function Dashboard() {
                                 Math game
                             </p>
                             <h1 className="text-4xl font-extrabold leading-[1.25] text-[#1E3A8A] md:text-6xl md:leading-[1.2]">
-                                ひたすら解く。ただそれだけ。
+                                <span className="inline md:block">ひたすら解く。</span>
+                                <span className="inline md:relative md:-left-2 md:block">
+                                    ただそれだけ。
+                                </span>
                             </h1>
                             <p className="text-base text-[#64748B] md:text-lg">
                                 短い計算で、ひらめきが続く。タップするだけの数学ゲーム。
