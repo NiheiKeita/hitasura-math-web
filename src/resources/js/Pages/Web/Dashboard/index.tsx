@@ -99,7 +99,7 @@ export const Dashboard = React.memo(function Dashboard() {
                             </p>
                             <h1 className="text-4xl font-extrabold leading-[1.25] text-[#1E3A8A] md:text-6xl md:leading-[1.2]">
                                 <span className="inline md:block">ひたすら解く。</span>
-                                <span className="inline md:relative md:-left-2 md:block">
+                                <span className="inline md:relative md:left-2 md:block">
                                     ただそれだけ。
                                 </span>
                             </h1>
