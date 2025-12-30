@@ -129,20 +129,20 @@ export const Dashboard = React.memo(function Dashboard() {
                     <div className="pointer-events-none absolute inset-0">
                         <div className="absolute -left-20 top-10 h-56 w-56 rounded-full bg-[#1E3A8A]/5" />
                         <div className="absolute right-0 top-32 h-40 w-40 rounded-full bg-[#1E3A8A]/5" />
-                        <div className="absolute right-0 top-4 h-32 w-32 opacity-30 motion-safe:animate-swim-left md:-right-6 md:top-8 md:h-40 md:w-40">
+                        <div className="motion-safe:animate-swim-left absolute right-0 top-4 h-32 w-32 opacity-30 md:-right-6 md:top-8 md:h-40 md:w-40">
                             <div className="fish-smooth motion-safe:animate-bob-fast">
                                 <img
-                                    src="/images/logo.PNG"
+                                    src="/images/logo.png"
                                     alt=""
                                     aria-hidden="true"
                                     className="h-full w-full rotate-6"
                                 />
                             </div>
                         </div>
-                        <div className="absolute bottom-6 left-6 hidden h-24 w-24 opacity-15 motion-safe:animate-swim-right md:block">
+                        <div className="motion-safe:animate-swim-right absolute bottom-6 left-6 hidden h-24 w-24 opacity-15 md:block">
                             <div className="fish-smooth motion-safe:animate-bob-fast">
                                 <img
-                                    src="/images/logo.PNG"
+                                    src="/images/logo.png"
                                     alt=""
                                     aria-hidden="true"
                                     className="h-full w-full -rotate-6"
@@ -157,14 +157,14 @@ export const Dashboard = React.memo(function Dashboard() {
                             </p>
                             <h1 className="text-4xl font-extrabold leading-[1.25] text-[#1E3A8A] md:text-6xl md:leading-[1.2]">
                                 <span className="block">ひたすら解く。</span>
-                                <span className="block relative left-2">
+                                <span className="relative left-2 block">
                                     ただそれだけ
                                     <span className="relative inline-block">
                                         。
-                                        <span className="pointer-events-none absolute -right-1 -top-1 h-4 w-4 rounded-full bg-[#2DD4BF]/60 bubble" />
-                                        <span className="pointer-events-none absolute -right-2 top-2 h-3 w-3 rounded-full bg-[#2DD4BF]/50 bubble bubble-delay-1" />
-                                        <span className="pointer-events-none absolute -right-0 top-4 h-4 w-4 rounded-full bg-[#2DD4BF]/40 bubble bubble-delay-2" />
-                                        <span className="pointer-events-none absolute -right-3 top-5 h-3 w-3 rounded-full bg-[#2DD4BF]/40 bubble bubble-delay-3" />
+                                        <span className="bubble pointer-events-none absolute -right-1 -top-1 h-4 w-4 rounded-full bg-[#2DD4BF]/60" />
+                                        <span className="bubble bubble-delay-1 pointer-events-none absolute -right-2 top-2 h-3 w-3 rounded-full bg-[#2DD4BF]/50" />
+                                        <span className="bubble bubble-delay-2 pointer-events-none absolute -right-0 top-4 h-4 w-4 rounded-full bg-[#2DD4BF]/40" />
+                                        <span className="bubble bubble-delay-3 pointer-events-none absolute -right-3 top-5 h-3 w-3 rounded-full bg-[#2DD4BF]/40" />
                                     </span>
                                 </span>
                             </h1>
