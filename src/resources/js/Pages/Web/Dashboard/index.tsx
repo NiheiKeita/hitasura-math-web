@@ -106,12 +106,20 @@ export const Dashboard = React.memo(function Dashboard() {
                         />
                     </div>
                     <div className="flex items-center gap-2">
-                        <button className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#1E3A8A] shadow-sm">
-                            無料で遊ぶ
-                        </button>
-                        <button className="rounded-full bg-[#2DD4BF] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-[#2DD4BF]/30">
-                            今すぐ遊ぶ
-                        </button>
+                        <a href="#" aria-label="App Storeで見る">
+                            <img
+                                src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                                alt="App Store"
+                                className="h-6 w-auto"
+                            />
+                        </a>
+                        <a href="#" aria-label="Google Playで見る">
+                            <img
+                                src="/images/logo/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
+                                alt="Google Play"
+                                className="h-6 w-auto"
+                            />
+                        </a>
                     </div>
                 </div>
             </header>
@@ -136,13 +144,26 @@ export const Dashboard = React.memo(function Dashboard() {
                             <p className="text-base text-[#64748B] md:text-lg">
                                 短い計算で、ひらめきが続く。タップするだけの数学ゲーム。
                             </p>
-                            <div className="flex flex-wrap items-center gap-3 pt-2">
+                            <div className="flex flex-col items-start gap-3 pt-2 sm:flex-row sm:items-center">
                                 <button className="rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30">
-                                    今すぐ遊ぶ
+                                    今すぐダウンロード
                                 </button>
-                                <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1E3A8A] shadow-sm">
-                                    無料で遊ぶ
-                                </button>
+                                <div className="flex flex-wrap items-center gap-3">
+                                    <a href="#" aria-label="App Storeで見る">
+                                        <img
+                                            src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                                            alt="App Store"
+                                            className="h-7 w-auto"
+                                        />
+                                    </a>
+                                    <a href="#" aria-label="Google Playで見る">
+                                        <img
+                                            src="/images/logo/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
+                                            alt="Google Play"
+                                            className="h-7 w-auto"
+                                        />
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
@@ -308,31 +329,35 @@ export const Dashboard = React.memo(function Dashboard() {
                 <section className="mx-auto max-w-6xl px-5 pb-20 pt-10 md:px-10">
                     <div className="rounded-3xl bg-white p-8 text-center shadow-[0_20px_40px_rgba(30,58,138,0.08)] md:p-12">
                         <h2 className="text-3xl font-extrabold text-[#1E3A8A]">
-                            無料で遊ぶ
+                            無料でダウンロード
                         </h2>
                         <p className="mt-3 text-sm text-[#64748B]">
                             ひらめきの気持ちよさを、今すぐ。
                         </p>
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
-                            <button className="rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30">
-                                今すぐ遊ぶ
-                            </button>
-                            <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1E3A8A] shadow-sm">
-                                App Store
-                            </button>
-                            <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1E3A8A] shadow-sm">
-                                Google Play
-                            </button>
+                            <a href="#" aria-label="App Storeで見る">
+                                <img
+                                    src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                                    alt="App Store"
+                                    className="h-8 w-auto"
+                                />
+                            </a>
+                            <a href="#" aria-label="Google Playで見る">
+                                <img
+                                    src="/images/logo/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
+                                    alt="Google Play"
+                                    className="h-8 w-auto"
+                                />
+                            </a>
                         </div>
-                        <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs text-[#64748B]">
-                            <a className="hover:text-[#1E3A8A]" href="#">
-                                X
-                            </a>
-                            <a className="hover:text-[#1E3A8A]" href="#">
-                                TikTok
-                            </a>
-                            <a className="hover:text-[#1E3A8A]" href="#">
-                                YouTube
+                        <div className="mt-6 text-xs text-[#64748B]">
+                            <a
+                                className="hover:text-[#1E3A8A]"
+                                href="https://keitamax.qboad.com/apps/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                その他のアプリ
                             </a>
                         </div>
                     </div>
