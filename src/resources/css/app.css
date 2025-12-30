@@ -22,6 +22,18 @@
     transform: translateZ(0);
     will-change: transform;
   }
+  .bubble {
+    animation: bubble-up 3.6s ease-in infinite;
+  }
+  .bubble-delay-1 {
+    animation-delay: 0.4s;
+  }
+  .bubble-delay-2 {
+    animation-delay: 1.2s;
+  }
+  .bubble-delay-3 {
+    animation-delay: 2s;
+  }
 }
 
 @keyframes float-slow {
@@ -81,5 +93,22 @@
   }
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bubble-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0) scale(0.6);
+  }
+  15% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -168px, 0) scale(1.1);
   }
 }

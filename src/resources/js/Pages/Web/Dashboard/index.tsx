@@ -158,7 +158,14 @@ export const Dashboard = React.memo(function Dashboard() {
                             <h1 className="text-4xl font-extrabold leading-[1.25] text-[#1E3A8A] md:text-6xl md:leading-[1.2]">
                                 <span className="block">ひたすら解く。</span>
                                 <span className="block relative left-2">
-                                    ただそれだけ。
+                                    ただそれだけ
+                                    <span className="relative inline-block">
+                                        。
+                                        <span className="pointer-events-none absolute -right-1 -top-1 h-4 w-4 rounded-full bg-[#2DD4BF]/60 bubble" />
+                                        <span className="pointer-events-none absolute -right-2 top-2 h-3 w-3 rounded-full bg-[#2DD4BF]/50 bubble bubble-delay-1" />
+                                        <span className="pointer-events-none absolute -right-0 top-4 h-4 w-4 rounded-full bg-[#2DD4BF]/40 bubble bubble-delay-2" />
+                                        <span className="pointer-events-none absolute -right-3 top-5 h-3 w-3 rounded-full bg-[#2DD4BF]/40 bubble bubble-delay-3" />
+                                    </span>
                                 </span>
                             </h1>
                             <p className="text-base text-[#64748B] md:text-lg">
