@@ -8,6 +8,20 @@
   .animate-float-slow {
     animation: float-slow 2.8s ease-in-out infinite;
   }
+  .animate-swim-right {
+    animation: swim-right 20s linear infinite;
+  }
+  .animate-swim-left {
+    animation: swim-left 22s linear infinite;
+  }
+  .animate-bob-fast {
+    animation: bob-fast 5s ease-in-out infinite;
+  }
+  .fish-smooth {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+  }
 }
 
 @keyframes float-slow {
@@ -19,5 +33,53 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes swim-right {
+  0% {
+    transform: translate3d(-112px, 0, 0) scaleX(-1);
+  }
+  49% {
+    transform: translate3d(144px, 0, 0) scaleX(-1);
+  }
+  50% {
+    transform: translate3d(144px, 0, 0) scaleX(1);
+  }
+  100% {
+    transform: translate3d(-112px, 0, 0) scaleX(1);
+  }
+}
+
+@keyframes swim-left {
+  0% {
+    transform: translate3d(112px, 0, 0) scaleX(1);
+  }
+  49% {
+    transform: translate3d(-144px, 0, 0) scaleX(1);
+  }
+  50% {
+    transform: translate3d(-144px, 0, 0) scaleX(-1);
+  }
+  100% {
+    transform: translate3d(112px, 0, 0) scaleX(-1);
+  }
+}
+
+@keyframes bob-fast {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(0, 48px, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(0, -36px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }

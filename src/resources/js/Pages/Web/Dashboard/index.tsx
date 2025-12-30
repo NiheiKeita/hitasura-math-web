@@ -129,6 +129,26 @@ export const Dashboard = React.memo(function Dashboard() {
                     <div className="pointer-events-none absolute inset-0">
                         <div className="absolute -left-20 top-10 h-56 w-56 rounded-full bg-[#1E3A8A]/5" />
                         <div className="absolute right-0 top-32 h-40 w-40 rounded-full bg-[#1E3A8A]/5" />
+                        <div className="absolute right-0 top-4 h-32 w-32 opacity-30 motion-safe:animate-swim-left md:-right-6 md:top-8 md:h-40 md:w-40">
+                            <div className="fish-smooth motion-safe:animate-bob-fast">
+                                <img
+                                    src="/images/logo.PNG"
+                                    alt=""
+                                    aria-hidden="true"
+                                    className="h-full w-full rotate-6"
+                                />
+                            </div>
+                        </div>
+                        <div className="absolute bottom-6 left-6 hidden h-24 w-24 opacity-15 motion-safe:animate-swim-right md:block">
+                            <div className="fish-smooth motion-safe:animate-bob-fast">
+                                <img
+                                    src="/images/logo.PNG"
+                                    alt=""
+                                    aria-hidden="true"
+                                    className="h-full w-full -rotate-6"
+                                />
+                            </div>
+                        </div>
                     </div>
                     <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:px-10 md:py-24">
                         <div className="space-y-5">
