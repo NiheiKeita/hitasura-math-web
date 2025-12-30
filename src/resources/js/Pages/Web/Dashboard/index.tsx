@@ -93,8 +93,17 @@ export const Dashboard = React.memo(function Dashboard() {
         >
             <header className="sticky top-0 z-40 bg-white/90 backdrop-blur">
                 <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-10">
-                    <div className="text-sm font-semibold tracking-wide text-[#1E3A8A]">
-                        ひたすら数学
+                    <div className="flex items-center gap-2">
+                        <img
+                            src="/images/logo_full.png"
+                            alt="ひたすら数学"
+                            className="h-7 w-auto md:h-8"
+                        />
+                        <img
+                            src="/images/logo.png"
+                            alt="ひたすら数学アイコン"
+                            className="h-7 w-auto md:h-8"
+                        />
                     </div>
                     <div className="flex items-center gap-2">
                         <button className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#1E3A8A] shadow-sm">
