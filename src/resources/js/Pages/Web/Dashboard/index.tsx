@@ -62,7 +62,28 @@ const comingSoon = [
     },
 ]
 
-const screenshots = ['PLAY 01', 'PLAY 02', 'PLAY 03', 'PLAY 04']
+const screenshots = [
+    {
+        label: 'PLAY 01',
+        src: '/images/game_screen/game_1.png',
+        caption: 'やりたいカテゴリを選択',
+    },
+    {
+        label: 'PLAY 02',
+        src: '/images/game_screen/game_2.png',
+        caption: 'やりたいモードを選択',
+    },
+    {
+        label: 'PLAY 03',
+        src: '/images/game_screen/game_3.png',
+        caption: '問題を解く',
+    },
+    {
+        label: 'PLAY 04',
+        src: '/images/game_screen/game_4.png',
+        caption: '結果が出る',
+    },
+]
 
 export const Dashboard = React.memo(function Dashboard() {
     return (
@@ -98,8 +119,8 @@ export const Dashboard = React.memo(function Dashboard() {
                                 Math game
                             </p>
                             <h1 className="text-4xl font-extrabold leading-[1.25] text-[#1E3A8A] md:text-6xl md:leading-[1.2]">
-                                <span className="inline md:block">ひたすら解く。</span>
-                                <span className="inline md:relative md:left-2 md:block">
+                                <span className="block">ひたすら解く。</span>
+                                <span className="block relative left-2">
                                     ただそれだけ。
                                 </span>
                             </h1>
@@ -118,36 +139,14 @@ export const Dashboard = React.memo(function Dashboard() {
 
                         <div className="mx-auto w-full max-w-sm">
                             <div className="relative rounded-[32px] bg-white p-3 shadow-2xl shadow-[#1E3A8A]/10">
-                                <div className="rounded-[26px] bg-white p-4 shadow-inner shadow-black/5">
-                                    <div className="mb-3 flex items-center justify-between text-xs text-[#64748B]">
-                                        <span>STREAK 12</span>
-                                        <span className="rounded-full bg-[#E5E7EB] px-2 py-0.5 text-[#1E3A8A]">
-                                            READY
-                                        </span>
-                                    </div>
-                                    <div className="rounded-2xl bg-white p-4 shadow-sm">
-                                        <div className="text-xs text-[#64748B]">
-                                            次の問題
-                                        </div>
-                                        <div className="mt-2 text-2xl font-bold text-[#1E3A8A]">
-                                            18 × 7
-                                        </div>
-                                        <div className="mt-4 grid grid-cols-2 gap-2 text-sm text-[#1E3A8A]">
-                                            {['126', '112', '134', '140'].map((value) => (
-                                                <div
-                                                    key={value}
-                                                    className="rounded-xl bg-white py-2 text-center shadow-sm"
-                                                >
-                                                    {value}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
+                                <div className="rounded-[26px] bg-white p-3 shadow-inner shadow-black/5">
+                                    <img
+                                        src="/images/game_top.png"
+                                        alt="ゲーム画面プレビュー"
+                                        className="w-full rounded-3xl object-cover"
+                                        loading="lazy"
+                                    />
                                 </div>
-                            </div>
-                            <div className="mt-6 flex items-center justify-center text-xs text-[#64748B]">
-                                <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-[#E5E7EB]" />
-                                スクロール
                             </div>
                         </div>
                     </div>
@@ -252,18 +251,21 @@ export const Dashboard = React.memo(function Dashboard() {
                         </h2>
                     </div>
                     <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pr-2 text-sm text-[#1E3A8A]">
-                        {screenshots.map((label) => (
+                        {screenshots.map((shot) => (
                             <div
-                                key={label}
+                                key={shot.label}
                                 className="w-[240px] shrink-0 snap-center rounded-3xl bg-white p-4 shadow-[0_12px_30px_rgba(30,58,138,0.06)]"
                             >
-                                <div className="aspect-[9/16] w-full rounded-2xl bg-white p-3 shadow-sm">
-                                    <div className="flex h-full items-center justify-center rounded-2xl bg-white text-xs text-[#64748B] shadow-inner shadow-black/5">
-                                        {label}
-                                    </div>
+                                <div className="aspect-[9/16] w-full overflow-hidden rounded-2xl bg-white p-3 shadow-sm">
+                                    <img
+                                        src={shot.src}
+                                        alt={`${shot.label} スクリーンショット`}
+                                        className="h-full w-full rounded-xl object-cover"
+                                        loading="lazy"
+                                    />
                                 </div>
                                 <div className="mt-3 text-xs text-[#64748B]">
-                                    スワイプでチェック
+                                    {shot.caption}
                                 </div>
                             </div>
                         ))}
