@@ -106,6 +106,7 @@ export const Dashboard = React.memo(function Dashboard() {
                         />
                     </div>
                     <div className="flex items-center gap-2">
+                        {/*
                         <a href="#" aria-label="App Storeで見る">
                             <img
                                 src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
@@ -113,7 +114,13 @@ export const Dashboard = React.memo(function Dashboard() {
                                 className="h-6 w-auto"
                             />
                         </a>
-                        <a href="#" aria-label="Google Playで見る">
+                        */}
+                        <a
+                            href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                            aria-label="Google Playで見る"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img
                                 src="/images/logo/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
                                 alt="Google Play"
@@ -172,10 +179,16 @@ export const Dashboard = React.memo(function Dashboard() {
                                 短い計算で、ひらめきが続く。タップするだけの数学ゲーム。
                             </p>
                             <div className="flex flex-col items-start gap-3 pt-2 sm:flex-row sm:items-center">
-                                <button className="rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30">
+                                <a
+                                    href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                                    className="rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     今すぐダウンロード
-                                </button>
+                                </a>
                                 <div className="flex flex-wrap items-center gap-3">
+                                    {/*
                                     <a href="#" aria-label="App Storeで見る">
                                         <img
                                             src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
@@ -183,7 +196,13 @@ export const Dashboard = React.memo(function Dashboard() {
                                             className="h-7 w-auto"
                                         />
                                     </a>
-                                    <a href="#" aria-label="Google Playで見る">
+                                    */}
+                                    <a
+                                        href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                                        aria-label="Google Playで見る"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
                                         <img
                                             src="/images/logo/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
                                             alt="Google Play"
@@ -272,9 +291,9 @@ export const Dashboard = React.memo(function Dashboard() {
                                 数学の気持ちよさ
                             </h2>
                         </div>
-                        <span className="rounded-full bg-[#2DD4BF] px-4 py-1 text-xs font-semibold text-white">
+                        {/* <span className="rounded-full bg-[#2DD4BF] px-4 py-1 text-xs font-semibold text-white">
                             これから増える
-                        </span>
+                        </span> */}
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
                         {contents.map((item) => (
@@ -335,7 +354,7 @@ export const Dashboard = React.memo(function Dashboard() {
                             COMING SOON
                         </p>
                         <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
-                            これから増える
+                            近日追加予定の機能
                         </h2>
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
@@ -362,6 +381,7 @@ export const Dashboard = React.memo(function Dashboard() {
                             ひらめきの気持ちよさを、今すぐ。
                         </p>
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
+                            {/*
                             <a href="#" aria-label="App Storeで見る">
                                 <img
                                     src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
@@ -369,7 +389,13 @@ export const Dashboard = React.memo(function Dashboard() {
                                     className="h-8 w-auto"
                                 />
                             </a>
-                            <a href="#" aria-label="Google Playで見る">
+                            */}
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                                aria-label="Google Playで見る"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <img
                                     src="/images/logo/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
                                     alt="Google Play"
