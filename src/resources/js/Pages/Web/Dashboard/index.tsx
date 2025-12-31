@@ -106,6 +106,7 @@ export const Dashboard = React.memo(function Dashboard() {
                         />
                     </div>
                     <div className="flex items-center gap-2">
+                        {/*
                         <a href="#" aria-label="App Storeで見る">
                             <img
                                 src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
@@ -113,7 +114,13 @@ export const Dashboard = React.memo(function Dashboard() {
                                 className="h-6 w-auto"
                             />
                         </a>
-                        <a href="#" aria-label="Google Playで見る">
+                        */}
+                        <a
+                            href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                            aria-label="Google Playで見る"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img
                                 src="/images/logo/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
                                 alt="Google Play"
@@ -129,20 +136,20 @@ export const Dashboard = React.memo(function Dashboard() {
                     <div className="pointer-events-none absolute inset-0">
                         <div className="absolute -left-20 top-10 h-56 w-56 rounded-full bg-[#1E3A8A]/5" />
                         <div className="absolute right-0 top-32 h-40 w-40 rounded-full bg-[#1E3A8A]/5" />
-                        <div className="absolute right-0 top-4 h-32 w-32 opacity-30 motion-safe:animate-swim-left md:-right-6 md:top-8 md:h-40 md:w-40">
+                        <div className="motion-safe:animate-swim-left absolute right-0 top-4 h-32 w-32 opacity-30 md:-right-6 md:top-8 md:h-40 md:w-40">
                             <div className="fish-smooth motion-safe:animate-bob-fast">
                                 <img
-                                    src="/images/logo.PNG"
+                                    src="/images/logo.png"
                                     alt=""
                                     aria-hidden="true"
                                     className="h-full w-full rotate-6"
                                 />
                             </div>
                         </div>
-                        <div className="absolute bottom-6 left-6 hidden h-24 w-24 opacity-15 motion-safe:animate-swim-right md:block">
+                        <div className="motion-safe:animate-swim-right absolute bottom-6 left-6 hidden h-24 w-24 opacity-15 md:block">
                             <div className="fish-smooth motion-safe:animate-bob-fast">
                                 <img
-                                    src="/images/logo.PNG"
+                                    src="/images/logo.png"
                                     alt=""
                                     aria-hidden="true"
                                     className="h-full w-full -rotate-6"
@@ -157,14 +164,14 @@ export const Dashboard = React.memo(function Dashboard() {
                             </p>
                             <h1 className="text-4xl font-extrabold leading-[1.25] text-[#1E3A8A] md:text-6xl md:leading-[1.2]">
                                 <span className="block">ひたすら解く。</span>
-                                <span className="block relative left-2">
+                                <span className="relative left-2 block">
                                     ただそれだけ
                                     <span className="relative inline-block">
                                         。
-                                        <span className="pointer-events-none absolute -right-1 -top-1 h-4 w-4 rounded-full bg-[#2DD4BF]/60 bubble" />
-                                        <span className="pointer-events-none absolute -right-2 top-2 h-3 w-3 rounded-full bg-[#2DD4BF]/50 bubble bubble-delay-1" />
-                                        <span className="pointer-events-none absolute -right-0 top-4 h-4 w-4 rounded-full bg-[#2DD4BF]/40 bubble bubble-delay-2" />
-                                        <span className="pointer-events-none absolute -right-3 top-5 h-3 w-3 rounded-full bg-[#2DD4BF]/40 bubble bubble-delay-3" />
+                                        <span className="bubble pointer-events-none absolute -right-1 -top-1 h-4 w-4 rounded-full bg-[#2DD4BF]/60" />
+                                        <span className="bubble bubble-delay-1 pointer-events-none absolute -right-2 top-2 h-3 w-3 rounded-full bg-[#2DD4BF]/50" />
+                                        <span className="bubble bubble-delay-2 pointer-events-none absolute -right-0 top-4 h-4 w-4 rounded-full bg-[#2DD4BF]/40" />
+                                        <span className="bubble bubble-delay-3 pointer-events-none absolute -right-3 top-5 h-3 w-3 rounded-full bg-[#2DD4BF]/40" />
                                     </span>
                                 </span>
                             </h1>
@@ -172,10 +179,16 @@ export const Dashboard = React.memo(function Dashboard() {
                                 短い計算で、ひらめきが続く。タップするだけの数学ゲーム。
                             </p>
                             <div className="flex flex-col items-start gap-3 pt-2 sm:flex-row sm:items-center">
-                                <button className="rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30">
+                                <a
+                                    href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                                    className="rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     今すぐダウンロード
-                                </button>
+                                </a>
                                 <div className="flex flex-wrap items-center gap-3">
+                                    {/*
                                     <a href="#" aria-label="App Storeで見る">
                                         <img
                                             src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
@@ -183,7 +196,13 @@ export const Dashboard = React.memo(function Dashboard() {
                                             className="h-7 w-auto"
                                         />
                                     </a>
-                                    <a href="#" aria-label="Google Playで見る">
+                                    */}
+                                    <a
+                                        href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                                        aria-label="Google Playで見る"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
                                         <img
                                             src="/images/logo/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
                                             alt="Google Play"
@@ -272,9 +291,9 @@ export const Dashboard = React.memo(function Dashboard() {
                                 数学の気持ちよさ
                             </h2>
                         </div>
-                        <span className="rounded-full bg-[#2DD4BF] px-4 py-1 text-xs font-semibold text-white">
+                        {/* <span className="rounded-full bg-[#2DD4BF] px-4 py-1 text-xs font-semibold text-white">
                             これから増える
-                        </span>
+                        </span> */}
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
                         {contents.map((item) => (
@@ -335,7 +354,7 @@ export const Dashboard = React.memo(function Dashboard() {
                             COMING SOON
                         </p>
                         <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
-                            これから増える
+                            近日追加予定の機能
                         </h2>
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
@@ -362,6 +381,7 @@ export const Dashboard = React.memo(function Dashboard() {
                             ひらめきの気持ちよさを、今すぐ。
                         </p>
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
+                            {/*
                             <a href="#" aria-label="App Storeで見る">
                                 <img
                                     src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
@@ -369,7 +389,13 @@ export const Dashboard = React.memo(function Dashboard() {
                                     className="h-8 w-auto"
                                 />
                             </a>
-                            <a href="#" aria-label="Google Playで見る">
+                            */}
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                                aria-label="Google Playで見る"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <img
                                     src="/images/logo/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
                                     alt="Google Play"
