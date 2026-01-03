@@ -8,12 +8,13 @@
         <title inertia>ひたすら数学</title>
         <link rel="icon" type="image/png" href="/images/logo.png">
         <meta property="og:title" content="ひたすら数学">
-        <meta property="og:image" content="/images/logo.png">
+        <meta property="og:image" content="{{ secure_asset('images/logo.png') }}">
+        <meta property="og:image:secure_url" content="{{ secure_asset('images/logo.png') }}">
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="ひたすら数学">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="ひたすら数学">
-        <meta name="twitter:image" content="/images/logo.png">
+        <meta name="twitter:image" content="{{ secure_asset('images/logo.png') }}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
