@@ -6,7 +6,9 @@
         <meta name="google-site-verification" content="ogE7nIzUAEGnSsw3YDTeyfaemBHdxn4X2f555Wq3cUQ" />
 
         <title inertia>ひたすら数学</title>
+        <meta name="description" content="ひたすら数学は、数学の学習をサポートするためのサービスです。">
         <link rel="icon" type="image/png" href="/images/logo.png">
+        <link rel="apple-touch-icon" href="/images/logo.png">
         <meta property="og:title" content="ひたすら数学">
         <meta property="og:image" content="{{ secure_asset('images/logo.png') }}">
         <meta property="og:image:secure_url" content="{{ secure_asset('images/logo.png') }}">
