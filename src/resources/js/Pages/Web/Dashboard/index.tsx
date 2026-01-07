@@ -1,6 +1,9 @@
 
 import React from 'react'
 
+const APP_STORE_URL = 'https://apps.apple.com/jp/app/%E3%81%B2%E3%81%9F%E3%81%99%E3%82%89%E6%95%B0%E5%AD%A6/id6757374941'
+const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.qboad.hitasura_math'
+
 const feelItems = [
     {
         title: '正解の快感',
@@ -86,6 +89,15 @@ const screenshots = [
 ]
 
 export const Dashboard = React.memo(function Dashboard() {
+    const storeUrl =
+        typeof navigator === 'undefined'
+            ? APP_STORE_URL
+            : /android/i.test(navigator.userAgent)
+              ? GOOGLE_PLAY_URL
+              : /iPad|iPhone|iPod/.test(navigator.userAgent)
+                ? APP_STORE_URL
+                : APP_STORE_URL
+
     return (
         <div
             className="min-h-screen bg-white text-[#64748B]"
@@ -106,17 +118,20 @@ export const Dashboard = React.memo(function Dashboard() {
                         />
                     </div>
                     <div className="flex items-center gap-2">
-                        {/*
-                        <a href="#" aria-label="App Storeで見る">
+                        <a
+                            href={APP_STORE_URL}
+                            aria-label="App Storeで見る"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img
                                 src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
                                 alt="App Store"
                                 className="h-6 w-auto"
                             />
                         </a>
-                        */}
                         <a
-                            href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                            href={GOOGLE_PLAY_URL}
                             aria-label="Google Playで見る"
                             target="_blank"
                             rel="noreferrer"
@@ -180,7 +195,7 @@ export const Dashboard = React.memo(function Dashboard() {
                             </p>
                             <div className="flex flex-col items-start gap-3 pt-2 sm:flex-row sm:items-center">
                                 <a
-                                    href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                                    href={storeUrl}
                                     className="rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30"
                                     target="_blank"
                                     rel="noreferrer"
@@ -188,17 +203,20 @@ export const Dashboard = React.memo(function Dashboard() {
                                     今すぐダウンロード
                                 </a>
                                 <div className="flex flex-wrap items-center gap-3">
-                                    {/*
-                                    <a href="#" aria-label="App Storeで見る">
+                                    <a
+                                        href={APP_STORE_URL}
+                                        aria-label="App Storeで見る"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
                                         <img
                                             src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
                                             alt="App Store"
                                             className="h-7 w-auto"
                                         />
                                     </a>
-                                    */}
                                     <a
-                                        href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                                        href={GOOGLE_PLAY_URL}
                                         aria-label="Google Playで見る"
                                         target="_blank"
                                         rel="noreferrer"
@@ -381,17 +399,20 @@ export const Dashboard = React.memo(function Dashboard() {
                             ひらめきの気持ちよさを、今すぐ。
                         </p>
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
-                            {/*
-                            <a href="#" aria-label="App Storeで見る">
+                            <a
+                                href={APP_STORE_URL}
+                                aria-label="App Storeで見る"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <img
                                     src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
                                     alt="App Store"
                                     className="h-8 w-auto"
                                 />
                             </a>
-                            */}
                             <a
-                                href="https://play.google.com/store/apps/details?id=com.qboad.hitasura_math"
+                                href={GOOGLE_PLAY_URL}
                                 aria-label="Google Playで見る"
                                 target="_blank"
                                 rel="noreferrer"
