@@ -5,6 +5,7 @@ import TextArea from '@/Components/TextArea'
 import InputError from '@/Components/InputError'
 import SiteHeader from '@/Components/SiteHeader'
 import WebFooter from '@/Components/WebFooter'
+import ModalView from '@/Components/ModalView'
 
 type Props = {
     categories: string[]
@@ -107,7 +108,7 @@ export const Feedback = React.memo<Props>(function Feedback({ categories, platfo
 
             if (!response.ok) {
                 if (response.status === 429) {
-                    setApiError('送信頻度が高すぎます。1分ほど空けて再度お試しください。')
+                    setApiError('送信頻度が高すぎます。30秒ほど空けて再度お試しください。')
                 } else if (responseBody?.errors) {
                     const serverErrors: Record<string, string> = {}
                     Object.entries(responseBody.errors).forEach(([key, messages]) => {
@@ -156,16 +157,11 @@ export const Feedback = React.memo<Props>(function Feedback({ categories, platfo
                             </p>
                         </div>
 
-                        {success && (
-                            <div className="mt-6 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
-                                送信ありがとうございました。内容を確認のうえ対応いたします。
-                            </div>
-                        )}
-                        {apiError && (
-                            <div className="mt-6 rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
-                                {apiError}
-                            </div>
-                        )}
+                    {apiError && (
+                        <div className="mt-6 rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
+                            {apiError}
+                        </div>
+                    )}
 
                         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                             <div>
@@ -295,6 +291,24 @@ export const Feedback = React.memo<Props>(function Feedback({ categories, platfo
                 </div>
             </main>
             <WebFooter appStoreUrl={APP_STORE_URL} googlePlayUrl={GOOGLE_PLAY_URL} />
+            <ModalView
+                isOpen={success}
+                onClose={() => setSuccess(false)}
+                title="送信ありがとうございました"
+            >
+                <p className="text-sm text-slate-600 md:text-base">
+                    内容を確認のうえ対応いたします。
+                </p>
+                <div className="mt-6">
+                    <button
+                        type="button"
+                        className="w-full rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30 transition hover:opacity-90"
+                        onClick={() => setSuccess(false)}
+                    >
+                        閉じる
+                    </button>
+                </div>
+            </ModalView>
         </div>
     )
 })

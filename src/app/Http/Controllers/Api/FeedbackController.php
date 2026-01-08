@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\FeedbackStoreRequest;
 use App\Models\Feedback;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class FeedbackController extends Controller
@@ -13,6 +15,15 @@ class FeedbackController extends Controller
     public function store(FeedbackStoreRequest $request): JsonResponse
     {
         $data = $request->validated();
+        $ipKey = $request->ip() ?: 'unknown';
+        $rateKey = 'feedback:cooldown:' . $ipKey;
+
+        if (! Cache::add($rateKey, true, now()->addSeconds(30))) {
+            return response()->json([
+                'success' => false,
+                'message' => '送信頻度が高すぎます。30秒ほど空けて再度お試しください。',
+            ], 429);
+        }
 
         $feedback = Feedback::create([
             'category' => $data['category'],
@@ -45,14 +56,18 @@ class FeedbackController extends Controller
             ];
 
             try {
-                Mail::raw(implode("\n", $lines), function ($message) use ($recipient, $subject) {
+                $mailer = config('mail.default', 'smtp');
+                if ($mailer === 'smtp' && ! config('mail.mailers.smtp.username')) {
+                    $mailer = 'log';
+                }
+
+                Mail::mailer($mailer)->raw(implode("\n", $lines), function ($message) use ($recipient, $subject) {
                     $message->to($recipient)->subject($subject);
                 });
             } catch (\Throwable $exception) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'メール送信に失敗しました。',
-                ], 500);
+                Log::warning('Feedback mail failed.', [
+                    'error' => $exception->getMessage(),
+                ]);
             }
         }
 

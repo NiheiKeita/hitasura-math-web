@@ -397,6 +397,28 @@ export const Dashboard = React.memo(function Dashboard() {
                         </div>
                     </div>
                 </section>
+                <section className="mx-auto max-w-6xl px-5 pb-20 md:px-10">
+                    <div className="rounded-3xl border border-[#1E3A8A]/10 bg-[#F8FAFC] p-8 text-center shadow-[0_20px_40px_rgba(30,58,138,0.08)] md:p-12">
+                        <p className="text-xs font-semibold tracking-[0.3em] text-[#94A3B8]">
+                            FEEDBACK
+                        </p>
+                        <h2 className="mt-3 text-2xl font-bold text-[#1E3A8A] md:text-3xl">
+                            <span className="block sm:inline">バグや改善点、</span>
+                            <span className="block sm:inline">欲しい機能があれば</span>
+                        </h2>
+                        <p className="mt-3 text-sm text-[#64748B] md:text-base">
+                            ぜひお問い合わせから教えてください。より良い体験にアップデートしていきます。
+                        </p>
+                        <div className="mt-6">
+                            <a
+                                href="/feedback"
+                                className="inline-flex items-center justify-center rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30 transition hover:opacity-90"
+                            >
+                                お問い合わせする
+                            </a>
+                        </div>
+                    </div>
+                </section>
             </main>
             <WebFooter appStoreUrl={APP_STORE_URL} googlePlayUrl={GOOGLE_PLAY_URL} />
         </div>
