@@ -19,7 +19,7 @@ class RedirectAdminIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
-        if (!Auth::guard("admin")->check()) {
+        if (!Auth::guard('admin')->check() && ! $request->session()->get('admin_simple_auth')) {
             return redirect(RouteServiceProvider::ADMIN_LOGIN);
         }
 

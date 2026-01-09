@@ -21,7 +21,17 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+        @verbatim
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "ひたすら数学",
+            "alternateName": "Hitasura Math",
+            "url": "https://hitasura-math.qboad.com/"
+        }
+        </script>
+        @endverbatim
         <!-- Scripts -->
         @routes
         @viteReactRefresh

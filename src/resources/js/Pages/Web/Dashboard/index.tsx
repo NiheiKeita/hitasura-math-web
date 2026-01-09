@@ -1,5 +1,7 @@
 
 import React from 'react'
+import SiteHeader from '@/Components/SiteHeader'
+import WebFooter from '@/Components/WebFooter'
 
 const APP_STORE_URL = 'https://apps.apple.com/jp/app/%E3%81%B2%E3%81%9F%E3%81%99%E3%82%89%E6%95%B0%E5%AD%A6/id6757374941'
 const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.qboad.hitasura_math'
@@ -103,48 +105,7 @@ export const Dashboard = React.memo(function Dashboard() {
             className="min-h-screen bg-white text-[#64748B]"
             style={{ fontFamily: '"Zen Kaku Gothic New", "Yu Gothic", sans-serif' }}
         >
-            <header className="sticky top-0 z-40 bg-white/90 backdrop-blur">
-                <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-10">
-                    <div className="flex items-center gap-2">
-                        <img
-                            src="/images/logo_full.png"
-                            alt="ひたすら数学"
-                            className="h-7 w-auto md:h-8"
-                        />
-                        <img
-                            src="/images/logo.png"
-                            alt="ひたすら数学アイコン"
-                            className="h-7 w-auto md:h-8"
-                        />
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <a
-                            href={APP_STORE_URL}
-                            aria-label="App Storeで見る"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <img
-                                src="/images/logo/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
-                                alt="App Store"
-                                className="h-6 w-auto"
-                            />
-                        </a>
-                        <a
-                            href={GOOGLE_PLAY_URL}
-                            aria-label="Google Playで見る"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <img
-                                src="/images/logo/GetItOnGooglePlay_Badge_Web_color_Japanese.svg"
-                                alt="Google Play"
-                                className="h-6 w-auto"
-                            />
-                        </a>
-                    </div>
-                </div>
-            </header>
+            <SiteHeader appStoreUrl={APP_STORE_URL} googlePlayUrl={GOOGLE_PLAY_URL} />
 
             <main>
                 <section className="relative overflow-hidden">
@@ -436,7 +397,30 @@ export const Dashboard = React.memo(function Dashboard() {
                         </div>
                     </div>
                 </section>
+                <section className="mx-auto max-w-6xl px-5 pb-20 md:px-10">
+                    <div className="rounded-3xl border border-[#1E3A8A]/10 bg-[#F8FAFC] p-8 text-center shadow-[0_20px_40px_rgba(30,58,138,0.08)] md:p-12">
+                        <p className="text-xs font-semibold tracking-[0.3em] text-[#94A3B8]">
+                            FEEDBACK
+                        </p>
+                        <h2 className="mt-3 text-2xl font-bold text-[#1E3A8A] md:text-3xl">
+                            <span className="block sm:inline">バグや改善点、</span>
+                            <span className="block sm:inline">欲しい機能があれば</span>
+                        </h2>
+                        <p className="mt-3 text-sm text-[#64748B] md:text-base">
+                            ぜひお問い合わせから教えてください。より良い体験にアップデートしていきます。
+                        </p>
+                        <div className="mt-6">
+                            <a
+                                href="/feedback"
+                                className="inline-flex items-center justify-center rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30 transition hover:opacity-90"
+                            >
+                                お問い合わせする
+                            </a>
+                        </div>
+                    </div>
+                </section>
             </main>
+            <WebFooter appStoreUrl={APP_STORE_URL} googlePlayUrl={GOOGLE_PLAY_URL} />
         </div>
     )
 })
