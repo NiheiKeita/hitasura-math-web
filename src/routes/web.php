@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\DashboardController;
 use App\Http\Controllers\Web\FeedbackController as WebFeedbackController;
+use App\Http\Controllers\Web\ArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,9 @@ use App\Http\Controllers\Web\FeedbackController as WebFeedbackController;
 Route::group(['middleware' => 'basicauth'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('web.top');
     Route::get('feedback', [WebFeedbackController::class, 'index'])->name('web.feedback');
+    Route::get('articles', [ArticlesController::class, 'index'])->name('web.articles');
+    Route::get('articles/factorization-study', [ArticlesController::class, 'factorizationStudy'])
+        ->name('web.articles.factorization-study');
 
     Route::fallback(function () {
         return redirect(route('web.top'));

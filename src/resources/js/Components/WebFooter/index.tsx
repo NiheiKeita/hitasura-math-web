@@ -26,6 +26,9 @@ export const WebFooter = React.memo<Props>(function WebFooter({
                     </p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <a href="/articles" className="text-sm font-semibold text-[#1E3A8A] hover:opacity-70">
+                        記事まとめ
+                    </a>
                     <a href="/feedback" className="text-sm font-semibold text-[#1E3A8A] hover:opacity-70">
                         お問い合わせ
                     </a>
