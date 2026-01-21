@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useMemo } from 'react'
+import { Head, usePage } from '@inertiajs/react'
 import SiteHeader from '@/Components/SiteHeader'
 import WebFooter from '@/Components/WebFooter'
 
@@ -6,9 +7,20 @@ const APP_STORE_URL =
     'https://apps.apple.com/jp/app/%E3%81%B2%E3%81%9F%E3%81%99%E3%82%89%E6%95%B0%E5%AD%A6/id6757374941'
 const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.qboad.hitasura_math'
 
-const articles = [
+type Article = {
+    title: string
+    subtitle: string
+    description: string
+    href: string
+    badge: string
+    readTime: string
+    keywords: string[]
+}
+
+const articles: Article[] = [
     {
-        title: '因数分解の勉強法まとめ｜アプリ学習で苦手を克服する完全ガイド',
+        title: '因数分解の勉強法まとめ',
+        subtitle: 'アプリ学習で苦手を克服する完全ガイド',
         description:
             '因数分解 勉強に悩む人向けに、つまずきの原因と勉強法を整理。因数分解 アプリ学習が効果的な理由も解説。',
         href: '/articles/factorization-study',
@@ -17,7 +29,8 @@ const articles = [
         keywords: ['因数分解 勉強', '因数分解 アプリ', '中学数学'],
     },
     {
-        title: '素因数分解の勉強法まとめ｜アプリ学習で基礎を固める完全ガイド',
+        title: '素因数分解の勉強法まとめ',
+        subtitle: 'アプリ学習で基礎を固める完全ガイド',
         description:
             '素因数分解の基本とつまずきポイントを整理。素因数分解 アプリで反復するメリットを紹介。',
         href: '/articles/prime-factorization-study',
@@ -26,7 +39,8 @@ const articles = [
         keywords: ['素因数分解 勉強', '素因数分解 アプリ', '中学数学'],
     },
     {
-        title: '微分の勉強法まとめ｜アプリ学習で苦手を克服する完全ガイド',
+        title: '微分の勉強法まとめ',
+        subtitle: 'アプリ学習で苦手を克服する完全ガイド',
         description:
             '微分の意味やつまずきポイントを整理。微分 アプリ学習で反復するメリットも解説。',
         href: '/articles/differential-study',
@@ -35,7 +49,8 @@ const articles = [
         keywords: ['微分 勉強', '微分 アプリ', '高校数学'],
     },
     {
-        title: '積分の勉強法まとめ｜アプリ学習で苦手を克服する完全ガイド',
+        title: '積分の勉強法まとめ',
+        subtitle: 'アプリ学習で苦手を克服する完全ガイド',
         description:
             '積分の意味とつまずきポイントを整理。積分 アプリ学習で反復するメリットも解説。',
         href: '/articles/integration-study',
@@ -44,7 +59,8 @@ const articles = [
         keywords: ['積分 勉強', '積分 アプリ', '高校数学'],
     },
     {
-        title: '微分と積分の違いを完全解説｜高校数学でつまずかないための考え方',
+        title: '微分と積分の違いを完全解説',
+        subtitle: '高校数学でつまずかないための考え方',
         description:
             '微分と積分の違いを一言で整理し、使い分けのポイントを解説。判断に迷う人向けの基礎ガイド。',
         href: '/articles/differential-vs-integration',
@@ -55,11 +71,35 @@ const articles = [
 ]
 
 export const Articles = React.memo(function Articles() {
+    const { url } = usePage()
+    const canonicalUrl = useMemo(() => {
+        if (typeof window === 'undefined') return ''
+        return `${window.location.origin}${url}`
+    }, [url])
+    const metaTitle = '数学の勉強が進む記事まとめ'
+    const metaDescription =
+        '因数分解・素因数分解・微分・積分など、数学学習を進めるための記事をまとめています。'
+    const ogImageUrl =
+        typeof window === 'undefined' ? '/images/logo.png' : `${window.location.origin}/images/logo.png`
+
     return (
         <div
             className="min-h-screen bg-white text-[#64748B]"
             style={{ fontFamily: '"Zen Kaku Gothic New", "Yu Gothic", sans-serif' }}
         >
+            <Head title={metaTitle}>
+                <meta name="description" content={metaDescription} />
+                <meta property="og:title" content={metaTitle} />
+                <meta property="og:description" content={metaDescription} />
+                <meta property="og:type" content="website" />
+                {canonicalUrl ? <meta property="og:url" content={canonicalUrl} /> : null}
+                <meta property="og:image" content={ogImageUrl} />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={metaTitle} />
+                <meta name="twitter:description" content={metaDescription} />
+                <meta name="twitter:image" content={ogImageUrl} />
+                {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
+            </Head>
             <SiteHeader appStoreUrl={APP_STORE_URL} googlePlayUrl={GOOGLE_PLAY_URL} />
 
             <main>
@@ -97,6 +137,9 @@ export const Articles = React.memo(function Articles() {
                                 <h2 className="mt-4 text-xl font-bold text-[#0F172A] transition group-hover:text-[#1E3A8A]">
                                     {article.title}
                                 </h2>
+                                <p className="mt-2 text-sm font-semibold text-[#1E3A8A]/80">
+                                    {article.subtitle}
+                                </p>
                                 <p className="mt-3 text-sm leading-relaxed text-[#475569]">
                                     {article.description}
                                 </p>
