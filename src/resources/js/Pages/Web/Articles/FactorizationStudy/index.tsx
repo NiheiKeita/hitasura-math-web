@@ -23,12 +23,12 @@ export const FactorizationStudy = React.memo(function FactorizationStudy() {
                     <span className="text-[#1E3A8A]">因数分解の勉強法</span>
                 </nav>
 
-                <article className="mt-6 space-y-10">
+                <article className="article-content mt-6 space-y-10">
                     <header className="space-y-4">
                         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#1E3A8A]">
                             Factorization Study Guide
                         </p>
-                        <h1 className="text-3xl font-extrabold leading-tight text-[#0F172A] md:text-5xl">
+                        <h1 className="text-3xl font-extrabold leading-[1.35] text-[#0F172A] md:text-5xl">
                             因数分解の勉強法まとめ｜アプリ学習で苦手を克服する完全ガイド
                         </h1>
                         <p className="text-base text-[#475569] md:text-lg">

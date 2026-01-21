@@ -22,6 +22,14 @@ Route::group(['middleware' => 'basicauth'], function () {
     Route::get('articles', [ArticlesController::class, 'index'])->name('web.articles');
     Route::get('articles/factorization-study', [ArticlesController::class, 'factorizationStudy'])
         ->name('web.articles.factorization-study');
+    Route::get('articles/prime-factorization-study', [ArticlesController::class, 'primeFactorizationStudy'])
+        ->name('web.articles.prime-factorization-study');
+    Route::get('articles/differential-study', [ArticlesController::class, 'differentialStudy'])
+        ->name('web.articles.differential-study');
+    Route::get('articles/integration-study', [ArticlesController::class, 'integrationStudy'])
+        ->name('web.articles.integration-study');
+    Route::get('articles/differential-vs-integration', [ArticlesController::class, 'differentialVsIntegration'])
+        ->name('web.articles.differential-vs-integration');
 
     Route::fallback(function () {
         return redirect(route('web.top'));

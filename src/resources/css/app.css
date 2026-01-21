@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .article-content strong {
+    color: rgb(13 148 136);
+  }
+}
+
 @layer utilities {
   .animate-float-slow {
     animation: float-slow 2.8s ease-in-out infinite;

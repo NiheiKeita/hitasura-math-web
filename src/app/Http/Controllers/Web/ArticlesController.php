@@ -17,4 +17,24 @@ class ArticlesController extends Controller
     {
         return Inertia::render('Web/Articles/FactorizationStudy');
     }
+
+    public function primeFactorizationStudy(): Response
+    {
+        return Inertia::render('Web/Articles/PrimeFactorizationStudy');
+    }
+
+    public function differentialStudy(): Response
+    {
+        return Inertia::render('Web/Articles/DifferentialStudy');
+    }
+
+    public function integrationStudy(): Response
+    {
+        return Inertia::render('Web/Articles/IntegrationStudy');
+    }
+
+    public function differentialVsIntegration(): Response
+    {
+        return Inertia::render('Web/Articles/DifferentialVsIntegration');
+    }
 }

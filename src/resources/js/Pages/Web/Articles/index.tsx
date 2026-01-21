@@ -16,6 +16,42 @@ const articles = [
         readTime: '読む目安: 6分',
         keywords: ['因数分解 勉強', '因数分解 アプリ', '中学数学'],
     },
+    {
+        title: '素因数分解の勉強法まとめ｜アプリ学習で基礎を固める完全ガイド',
+        description:
+            '素因数分解の基本とつまずきポイントを整理。素因数分解 アプリで反復するメリットを紹介。',
+        href: '/articles/prime-factorization-study',
+        badge: '学習ガイド',
+        readTime: '読む目安: 6分',
+        keywords: ['素因数分解 勉強', '素因数分解 アプリ', '中学数学'],
+    },
+    {
+        title: '微分の勉強法まとめ｜アプリ学習で苦手を克服する完全ガイド',
+        description:
+            '微分の意味やつまずきポイントを整理。微分 アプリ学習で反復するメリットも解説。',
+        href: '/articles/differential-study',
+        badge: '学習ガイド',
+        readTime: '読む目安: 7分',
+        keywords: ['微分 勉強', '微分 アプリ', '高校数学'],
+    },
+    {
+        title: '積分の勉強法まとめ｜アプリ学習で苦手を克服する完全ガイド',
+        description:
+            '積分の意味とつまずきポイントを整理。積分 アプリ学習で反復するメリットも解説。',
+        href: '/articles/integration-study',
+        badge: '学習ガイド',
+        readTime: '読む目安: 7分',
+        keywords: ['積分 勉強', '積分 アプリ', '高校数学'],
+    },
+    {
+        title: '微分と積分の違いを完全解説｜高校数学でつまずかないための考え方',
+        description:
+            '微分と積分の違いを一言で整理し、使い分けのポイントを解説。判断に迷う人向けの基礎ガイド。',
+        href: '/articles/differential-vs-integration',
+        badge: '基礎理解',
+        readTime: '読む目安: 6分',
+        keywords: ['微分 積分 違い', '高校数学', '使い分け'],
+    },
 ]
 
 export const Articles = React.memo(function Articles() {
