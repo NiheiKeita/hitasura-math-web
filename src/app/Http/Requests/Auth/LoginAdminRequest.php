@@ -11,6 +11,8 @@ use Illuminate\Validation\ValidationException;
 
 class LoginAdminRequest extends FormRequest
 {
+    private bool $authenticatedBySimpleAdmin = false;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -27,7 +29,7 @@ class LoginAdminRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email'],
+            'email' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string'],
         ];
     }
@@ -41,6 +43,11 @@ class LoginAdminRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
+        if ($this->attemptSimpleAdmin()) {
+            RateLimiter::clear($this->throttleKey());
+            return;
+        }
+
         if (! Auth::guard('admin')->attempt($this->only('email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
@@ -50,6 +57,31 @@ class LoginAdminRequest extends FormRequest
         }
 
         RateLimiter::clear($this->throttleKey());
+    }
+
+    public function authenticatedBySimpleAdmin(): bool
+    {
+        return $this->authenticatedBySimpleAdmin;
+    }
+
+    private function attemptSimpleAdmin(): bool
+    {
+        $adminId = config('app.admin_id');
+        $adminPassword = config('app.admin_password');
+
+        if (! $adminId || ! $adminPassword) {
+            return false;
+        }
+
+        if (
+            hash_equals($adminId, (string) $this->input('email')) &&
+            hash_equals($adminPassword, (string) $this->input('password'))
+        ) {
+            $this->authenticatedBySimpleAdmin = true;
+            return true;
+        }
+
+        return false;
     }
 
     /**

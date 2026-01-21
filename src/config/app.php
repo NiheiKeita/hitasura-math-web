@@ -198,4 +198,6 @@ return [
 
     'email' => env('APP_EMAIL', 'info@xs163201.xsrv.jp'),
     'admin_email' => env('ADMIN_EMAIL', 'admin@example.com'),
+    'admin_id' => env('ADMIN_ID', ''),
+    'admin_password' => env('ADMIN_PASS', ''),
 ];
