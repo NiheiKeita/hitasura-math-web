@@ -36,7 +36,13 @@ const modes = [
     },
 ]
 
-const contents = [
+type ContentItem = {
+    title: string
+    meta: string
+    soon?: boolean
+}
+
+const contents: ContentItem[] = [
     {
         title: '因数分解',
         meta: '基本を軽快に。',
@@ -47,7 +53,11 @@ const contents = [
     },
     {
         title: '微分・積分',
-        meta: 'COMING SOON',
+        meta: '変化をつかむ。',
+    },
+    {
+        title: '式の展開',
+        meta: '広げる力を鍛える。',
         soon: true,
     },
 ]
@@ -59,7 +69,7 @@ const comingSoon = [
     },
     {
         title: 'Calendar',
-        body: '積み上げが見える。',
+        body: 'カレンダーで学習をみる。',
     },
     {
         title: 'More modes',
@@ -95,10 +105,10 @@ export const Dashboard = React.memo(function Dashboard() {
         typeof navigator === 'undefined'
             ? APP_STORE_URL
             : /android/i.test(navigator.userAgent)
-              ? GOOGLE_PLAY_URL
-              : /iPad|iPhone|iPod/.test(navigator.userAgent)
-                ? APP_STORE_URL
-                : APP_STORE_URL
+                ? GOOGLE_PLAY_URL
+                : /iPad|iPhone|iPod/.test(navigator.userAgent)
+                    ? APP_STORE_URL
+                    : APP_STORE_URL
 
     return (
         <div
@@ -324,6 +334,36 @@ export const Dashboard = React.memo(function Dashboard() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </section>
+
+                <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
+                    <div className="grid gap-8 rounded-3xl bg-[#F8FAFC] p-8 shadow-[0_20px_40px_rgba(30,58,138,0.08)] md:grid-cols-[1.2fr_0.8fr] md:items-center md:p-12">
+                        <div>
+                            <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
+                                CALENDAR
+                            </p>
+                            <h2 className="mt-3 text-2xl font-bold text-[#1E3A8A] md:text-3xl">
+                                学習の積み上げが見える
+                            </h2>
+                            <p className="mt-3 text-sm text-[#64748B] md:text-base">
+                                カレンダーで毎日の学習をひと目で確認。続いている日が増えるほど、勉強の手応えが
+                                見えてきます。
+                            </p>
+                        </div>
+                        <div className="rounded-3xl border border-[#1E3A8A]/10 bg-white p-6 text-sm text-[#64748B] shadow-[0_12px_30px_rgba(30,58,138,0.06)]">
+                            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
+                                <img
+                                    src="/images/calendar.jpg"
+                                    alt="学習の積み上げが分かるカレンダー画面"
+                                    className="h-full w-full object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <p className="mt-4 text-xs text-[#94A3B8]">
+                                継続日数が増えるほど、色が広がっていくイメージです。
+                            </p>
+                        </div>
                     </div>
                 </section>
 

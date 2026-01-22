@@ -26,6 +26,12 @@ export const SiteHeader = React.memo<Props>(function SiteHeader({
                 </a>
                 <div className="flex items-center gap-2">
                     <a
+                        href="/articles"
+                        className="hidden rounded-full border border-[#1E3A8A]/20 px-4 py-2 text-xs font-semibold text-[#1E3A8A] transition hover:border-[#1E3A8A]/40 hover:bg-[#1E3A8A]/5 md:inline-flex md:text-sm"
+                    >
+                        記事まとめ
+                    </a>
+                    <a
                         href="/feedback"
                         className="hidden rounded-full border border-[#1E3A8A]/20 px-4 py-2 text-xs font-semibold text-[#1E3A8A] transition hover:border-[#1E3A8A]/40 hover:bg-[#1E3A8A]/5 md:inline-flex md:text-sm"
                     >
