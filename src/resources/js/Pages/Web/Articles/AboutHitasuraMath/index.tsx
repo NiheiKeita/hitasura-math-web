@@ -99,6 +99,7 @@ export const AboutHitasuraMath = React.memo(function AboutHitasuraMath() {
                             <p className="text-lg font-semibold text-[#1E3A8A]/80">
                                 苦手な人のために作られた数学練習アプリ
                             </p>
+                            <div className="h-1 w-12 rounded-full bg-[#2DD4BF]" />
                             <p className="text-base text-[#475569] md:text-lg">
                                 ひたすら数学は、数学が苦手な人・途中でつまずいた人のために作られた、短時間の反復に特化した数学アプリです。
                             </p>
@@ -170,7 +171,7 @@ export const AboutHitasuraMath = React.memo(function AboutHitasuraMath() {
                                 数学が苦手な人ほど、<strong>「考える前に手が動く状態」を作ること</strong>を目的にしています。
                             </p>
                         </div>
-                        <div className="rounded-3xl bg-[#0F172A] p-6 text-white">
+                        <div className="rounded-3xl bg-[#1E3A8A] p-6 text-white shadow-[0_20px_40px_rgba(45,212,191,0.18)]">
                             <p className="text-xs font-semibold tracking-[0.3em] text-white/60">
                                 WHY WE BUILT
                             </p>
@@ -179,7 +180,7 @@ export const AboutHitasuraMath = React.memo(function AboutHitasuraMath() {
                                 数学が苦手な人の多くは、理解力ではなく「解く回数」が足りないだけです。
                                 「進めないから理解できない」という悪循環を断ち切るために作られました。
                             </p>
-                            <div className="mt-4 rounded-2xl bg-white/10 p-4 text-sm">
+                            <div className="mt-4 rounded-2xl border border-[#2DD4BF]/40 bg-white/10 p-4 text-sm">
                                 <p className="font-semibold">
                                     「理解できないから進めない」ではなく
                                 </p>
@@ -288,7 +289,7 @@ export const AboutHitasuraMath = React.memo(function AboutHitasuraMath() {
                 </section>
 
                 <section className="mx-auto max-w-6xl px-5 pb-16 md:px-10">
-                    <div className="rounded-3xl bg-[#0F172A] p-10 text-white md:p-12">
+                    <div className="rounded-3xl bg-[#1E3A8A] p-10 text-white md:p-12">
                         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
                             <div>
                                 <p className="text-xs font-semibold tracking-[0.3em] text-white/60">
