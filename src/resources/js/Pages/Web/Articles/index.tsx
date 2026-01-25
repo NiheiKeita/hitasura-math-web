@@ -19,6 +19,36 @@ type Article = {
 
 const articles: Article[] = [
     {
+        title: '中学数学の勉強法まとめ',
+        subtitle: 'アプリ学習で苦手を克服する完全ガイド',
+        description:
+            '中学数学の勉強法と主要単元のポイントを整理。因数分解や素因数分解など関連記事もまとめた記事。',
+        href: '/articles/junior-high-math-guide',
+        badge: 'まとめ',
+        readTime: '読む目安: 8分',
+        keywords: ['中学数学 勉強法', '数学 アプリ', '勉強法'],
+    },
+    {
+        title: '高校数学の勉強法まとめ',
+        subtitle: '微分・積分から始める苦手克服ガイド',
+        description:
+            '高校数学の勉強法と主要単元のポイントを整理。微分・積分の関連記事へつながる記事。',
+        href: '/articles/high-school-math-guide',
+        badge: 'まとめ',
+        readTime: '読む目安: 7分',
+        keywords: ['高校数学 勉強法', '微分 積分', '数学 アプリ'],
+    },
+    {
+        title: 'ひたすら数学とは？',
+        subtitle: '苦手な人のために作られた数学練習アプリ',
+        description:
+            'ひたすら数学の特徴や作った理由、どんな人に向いているかをまとめた紹介記事。',
+        href: '/articles/about-hitasura-math',
+        badge: 'アプリ紹介',
+        readTime: '読む目安: 6分',
+        keywords: ['ひたすら数学', '数学アプリ', '勉強法'],
+    },
+    {
         title: '因数分解の勉強法まとめ',
         subtitle: 'アプリ学習で苦手を克服する完全ガイド',
         description:
@@ -67,6 +97,66 @@ const articles: Article[] = [
         badge: '基礎理解',
         readTime: '読む目安: 6分',
         keywords: ['微分 積分 違い', '高校数学', '使い分け'],
+    },
+    {
+        title: '因数分解と素因数分解の違いを完全解説',
+        subtitle: '中学数学で混乱しないための整理',
+        description:
+            '因数分解と素因数分解の違いを一言で整理し、見分け方や使い分けを解説。混乱しやすい人向けの基礎ガイド。',
+        href: '/articles/factorization-vs-prime-factorization',
+        badge: '基礎理解',
+        readTime: '読む目安: 6分',
+        keywords: ['因数分解 素因数分解 違い', '中学数学', '使い分け'],
+    },
+    {
+        title: '因数分解と式の展開の違いを完全解説',
+        subtitle: '中学数学で迷わなくなる考え方',
+        description:
+            '因数分解と式の展開の違いを一言で整理し、使い分けのポイントを解説。迷いやすい人向けの基礎ガイド。',
+        href: '/articles/factorization-vs-expansion',
+        badge: '基礎理解',
+        readTime: '読む目安: 6分',
+        keywords: ['因数分解 展開 違い', '中学数学', '使い分け'],
+    },
+    {
+        title: '最大公約数と最小公倍数の違いを完全解説',
+        subtitle: '中学数学で混乱しない考え方',
+        description:
+            '最大公約数と最小公倍数の違いを一言で整理し、使い分けのポイントを解説。混乱しやすい人向けの基礎ガイド。',
+        href: '/articles/gcd-vs-lcm',
+        badge: '基礎理解',
+        readTime: '読む目安: 6分',
+        keywords: ['最大公約数 最小公倍数 違い', '中学数学', '使い分け'],
+    },
+    {
+        title: '分数の約分と通分の考え方を完全解説',
+        subtitle: '中学数学で迷わなくなる基本整理',
+        description:
+            '約分と通分の違いを一言で整理し、最大公約数・最小公倍数との関係も解説。迷いやすい人向けの基礎ガイド。',
+        href: '/articles/fraction-reduction-vs-common-denominator',
+        badge: '基礎理解',
+        readTime: '読む目安: 6分',
+        keywords: ['約分 通分 違い', '分数 計算', '中学数学'],
+    },
+    {
+        title: '最大公約数とは？意味・求め方・使い道までやさしく完全解説',
+        subtitle: '中学数学の基礎をやさしく整理',
+        description:
+            '最大公約数の意味、求め方、使い道をわかりやすく解説。素因数分解を使った考え方も整理。',
+        href: '/articles/gcd-basics',
+        badge: '基礎理解',
+        readTime: '読む目安: 7分',
+        keywords: ['最大公約数', '中学数学', '求め方'],
+    },
+    {
+        title: '最小公倍数とは？意味・求め方・使い道までやさしく完全解説',
+        subtitle: '中学数学の基礎をやさしく整理',
+        description:
+            '最小公倍数の意味、求め方、使い道をわかりやすく解説。素因数分解を使った考え方も整理。',
+        href: '/articles/lcm-basics',
+        badge: '基礎理解',
+        readTime: '読む目安: 7分',
+        keywords: ['最小公倍数', '中学数学', '求め方'],
     },
 ]
 
