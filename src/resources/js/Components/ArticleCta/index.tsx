@@ -19,7 +19,9 @@ export const ArticleCta = React.memo<Props>(function ArticleCta({
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
                         {eyebrow}
                     </p>
-                    <h2 className="mt-3 text-2xl font-bold md:text-3xl">{title}</h2>
+                    <h2 className="mt-3 text-2xl font-bold leading-snug md:text-3xl">
+                        {title}
+                    </h2>
                     <p className="mt-3 text-sm text-white/80 md:text-base">{description}</p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3">

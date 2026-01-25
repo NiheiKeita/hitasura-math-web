@@ -37,4 +37,49 @@ class ArticlesController extends Controller
     {
         return Inertia::render('Web/Articles/DifferentialVsIntegration');
     }
+
+    public function factorizationVsPrimeFactorization(): Response
+    {
+        return Inertia::render('Web/Articles/FactorizationVsPrimeFactorization');
+    }
+
+    public function factorizationVsExpansion(): Response
+    {
+        return Inertia::render('Web/Articles/FactorizationVsExpansion');
+    }
+
+    public function gcdVsLcm(): Response
+    {
+        return Inertia::render('Web/Articles/GcdVsLcm');
+    }
+
+    public function fractionReductionVsCommonDenominator(): Response
+    {
+        return Inertia::render('Web/Articles/FractionReductionVsCommonDenominator');
+    }
+
+    public function gcdBasics(): Response
+    {
+        return Inertia::render('Web/Articles/GcdBasics');
+    }
+
+    public function lcmBasics(): Response
+    {
+        return Inertia::render('Web/Articles/LcmBasics');
+    }
+
+    public function juniorHighMathGuide(): Response
+    {
+        return Inertia::render('Web/Articles/JuniorHighMathGuide');
+    }
+
+    public function highSchoolMathGuide(): Response
+    {
+        return Inertia::render('Web/Articles/HighSchoolMathGuide');
+    }
+
+    public function aboutHitasuraMath(): Response
+    {
+        return Inertia::render('Web/Articles/AboutHitasuraMath');
+    }
 }
