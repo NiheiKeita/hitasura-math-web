@@ -207,10 +207,6 @@ const messages = {
                         body: '自己ベストと競う。',
                     },
                     {
-                        title: 'Calendar',
-                        body: 'カレンダーで学習をみる。',
-                    },
-                    {
                         title: 'More modes',
                         body: '遊び方が広がる。',
                     },
@@ -623,16 +619,16 @@ const messages = {
                     readTime: '6',
                     keywords: ['factorization study', 'factorization app', 'junior high math'],
                 },
-                    {
-                        title: 'Prime Factorization Study Guide',
-                        subtitle: 'Build the basics with app practice',
-                        description:
-                            'The basics and common stumbling points, plus the benefits of repetition.',
-                        href: '/articles/prime-factorization-study',
-                        badge: 'Study guide',
-                        readTime: '6',
-                        keywords: ['prime factorization study', 'prime factorization app', 'junior high math'],
-                    },
+                {
+                    title: 'Prime Factorization Study Guide',
+                    subtitle: 'Build the basics with app practice',
+                    description:
+                        'The basics and common stumbling points, plus the benefits of repetition.',
+                    href: '/articles/prime-factorization-study',
+                    badge: 'Study guide',
+                    readTime: '6',
+                    keywords: ['prime factorization study', 'prime factorization app', 'junior high math'],
+                },
                 {
                     title: 'Differentiation Study Guide',
                     subtitle: 'Overcome weak points with app practice',
@@ -653,16 +649,16 @@ const messages = {
                     readTime: '7',
                     keywords: ['integration study', 'integration app', 'high school math'],
                 },
-                    {
-                        title: 'Differentiation vs Integration: A Clear Explanation',
-                        subtitle: 'Avoid confusion in high school math',
-                        description:
-                            'A one-sentence difference plus tips for choosing which one to use.',
-                        href: '/articles/differential-vs-integration',
-                        badge: 'Fundamentals',
-                        readTime: '6',
-                        keywords: ['differentiation integration difference', 'high school math', 'how to choose'],
-                    },
+                {
+                    title: 'Differentiation vs Integration: A Clear Explanation',
+                    subtitle: 'Avoid confusion in high school math',
+                    description:
+                        'A one-sentence difference plus tips for choosing which one to use.',
+                    href: '/articles/differential-vs-integration',
+                    badge: 'Fundamentals',
+                    readTime: '6',
+                    keywords: ['differentiation integration difference', 'high school math', 'how to choose'],
+                },
                 {
                     title: 'Factorization vs Prime Factorization: A Clear Explanation',
                     subtitle: 'Avoid confusion in junior high math',
