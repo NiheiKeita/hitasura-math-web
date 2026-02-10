@@ -3,6 +3,7 @@ import { Head, usePage } from '@inertiajs/react'
 import SiteHeader from '@/Components/SiteHeader'
 import WebFooter from '@/Components/WebFooter'
 import { APP_STORE_URL, GOOGLE_PLAY_URL } from '@/lib/storeUrls'
+import { useI18n, withLocale } from '@/i18n'
 
 type Props = {
     breadcrumbLabel: string
@@ -23,6 +24,7 @@ export const ArticleLayout = React.memo<Props>(function ArticleLayout({
     tags,
     children,
 }) {
+    const { messages, locale } = useI18n()
     const { url } = usePage()
     const metaTitle = subtitle ? `${title}｜${subtitle}` : title
     const canonicalUrl = useMemo(() => {
@@ -54,8 +56,8 @@ export const ArticleLayout = React.memo<Props>(function ArticleLayout({
 
             <main className="mx-auto max-w-4xl px-5 py-12 md:px-10 md:py-16">
                 <nav className="text-xs font-semibold text-[#94A3B8]">
-                    <a href="/articles" className="hover:text-[#1E3A8A]">
-                        記事一覧
+                    <a href={withLocale('/articles', locale)} className="hover:text-[#1E3A8A]">
+                        {messages.articleLayout.breadcrumb}
                     </a>
                     <span className="mx-2">/</span>
                     <span className="text-[#1E3A8A]">{breadcrumbLabel}</span>
