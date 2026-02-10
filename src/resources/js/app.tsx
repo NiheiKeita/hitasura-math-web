@@ -4,6 +4,7 @@ import '../css/app.css'
 import { createRoot } from 'react-dom/client'
 import { createInertiaApp } from '@inertiajs/react'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
+import { initLocale } from '@/i18n'
 
 const appName = import.meta.env.VITE_APP_NAME || 'ひたすら数学'
 
@@ -12,6 +13,7 @@ createInertiaApp({
     title: (title) => `${title} ${appName}`,
     resolve: (name) => resolvePageComponent(`./Pages/${name}/index.tsx`, import.meta.glob('./Pages/**/*.tsx')),
     setup({ el, App, props }) {
+        initLocale()
         const root = createRoot(el)
 
         root.render(<App {...props} />)

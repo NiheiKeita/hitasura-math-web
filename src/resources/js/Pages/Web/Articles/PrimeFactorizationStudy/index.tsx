@@ -2,17 +2,139 @@ import React from 'react'
 import ArticleLayout from '@/Components/ArticleLayout'
 import ArticleCta from '@/Components/ArticleCta'
 import ArticleSection, { ArticleSubsection } from '@/Components/ArticleSection'
+import { useI18n } from '@/i18n'
 
 export const PrimeFactorizationStudy = React.memo(function PrimeFactorizationStudy() {
+    const { locale } = useI18n()
+    const isEn = locale === 'en'
+
     return (
         <ArticleLayout
-            breadcrumbLabel="素因数分解の勉強法"
+            breadcrumbLabel={isEn ? 'How to Study Prime Factorization' : '素因数分解の勉強法'}
             eyebrow="Prime Factorization Study Guide"
-            title="素因数分解の勉強法まとめ"
-            subtitle="アプリ学習で基礎を固める完全ガイド"
-            description="素因数分解の勉強でつまずく原因と、短時間で繰り返し練習する方法を整理。素因数分解アプリを使った反復学習の効果もまとめました。"
-            tags={['素因数分解 勉強', '素因数分解 アプリ', '中学数学']}
+            title={isEn ? 'How to Study Prime Factorization' : '素因数分解の勉強法まとめ'}
+            subtitle={
+                isEn
+                    ? 'A complete guide to building the basics with app practice'
+                    : 'アプリ学習で基礎を固める完全ガイド'
+            }
+            description={
+                isEn
+                    ? 'Why prime factorization is hard, how to practice efficiently, and why app repetition helps.'
+                    : '素因数分解の勉強でつまずく原因と、短時間で繰り返し練習する方法を整理。素因数分解アプリを使った反復学習の効果もまとめました。'
+            }
+            tags={isEn ? ['prime factorization study', 'prime factorization app', 'junior high math'] : ['素因数分解 勉強', '素因数分解 アプリ', '中学数学']}
         >
+            {isEn ? (
+                <>
+                    <ArticleSection title="Stuck on prime factorization?">
+                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
+                            <li>I don’t know where to start dividing</li>
+                            <li>I make a mistake halfway and the answer is wrong</li>
+                            <li>It takes too long</li>
+                        </ul>
+                        <p>
+                            It’s not just you. Prime factorization is one of the first places students stumble.
+                        </p>
+                        <p>
+                            The issue isn’t talent — it’s the study method.
+                        </p>
+                    </ArticleSection>
+
+                    <ArticleSection title="What is prime factorization?">
+                        <p>
+                            Prime factorization means expressing a number as a product of <strong>prime numbers only</strong>.
+                        </p>
+                        <p>For example, 60 becomes:</p>
+                        <p className="rounded-2xl bg-slate-50 p-5 font-mono text-sm text-[#0F172A]">60 = 2 × 2 × 3 × 5</p>
+                        <p>
+                            The key is to use only primes like 2, 3, 5 — <strong>not 1 or composite numbers</strong>.
+                        </p>
+                    </ArticleSection>
+
+                    <ArticleSection title="Why study prime factorization (this matters most)">
+                        <p>“What is this used for?” It has real purposes.</p>
+                        <ArticleSubsection title="It leads directly to GCD and LCM">
+                            <p>
+                                You can’t truly understand the GCD and LCM without prime factorization.
+                            </p>
+                            <p>
+                                Prime factorization is the <strong>foundation of junior high number theory</strong>.
+                            </p>
+                        </ArticleSubsection>
+                        <ArticleSubsection title="It makes fraction work easier">
+                            <p>
+                                When you reduce fractions, you’re essentially doing prime factorization in your head.
+                            </p>
+                        </ArticleSubsection>
+                    </ArticleSection>
+
+                    <ArticleSection title="The basic method">
+                        <p>The flow is simple:</p>
+                        <ol className="list-inside list-decimal space-y-2 text-[#475569]">
+                            <li>Divide by small primes first</li>
+                            <li>If it no longer divides, move to the next prime</li>
+                            <li>Stop when the remaining number is prime</li>
+                        </ol>
+                        <p>Example: 60</p>
+                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
+                            <li>60 is even → divide by 2</li>
+                            <li>30 is even → divide by 2</li>
+                            <li>15 is divisible by 3</li>
+                            <li>5 is prime</li>
+                        </ul>
+                        <p className="rounded-2xl bg-slate-50 p-5 font-mono text-sm text-[#0F172A]">60 = 2 × 2 × 3 × 5</p>
+                    </ArticleSection>
+
+                    <ArticleSection title="Why it often doesn’t go well">
+                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
+                            <li>Forgetting small primes</li>
+                            <li>Not checking divisibility carefully</li>
+                            <li>Rushing without a consistent routine</li>
+                        </ul>
+                        <p>It’s a method problem, not an ability problem.</p>
+                    </ArticleSection>
+
+                    <ArticleSection title="How to study prime factorization">
+                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
+                            <li>Always start with 2, then 3, then 5</li>
+                            <li>Say the steps out loud as you divide</li>
+                            <li>Repeat short sessions daily</li>
+                        </ul>
+                        <p>Short, consistent repetition builds speed and accuracy.</p>
+                    </ArticleSection>
+
+                    <ArticleSection title="Why app practice works well">
+                        <p>Prime factorization improves with repetition.</p>
+                        <p>
+                            That’s why <strong>app practice is a perfect fit</strong>: you can do many short problems with
+                            instant feedback.
+                        </p>
+                    </ArticleSection>
+
+                    <ArticleSection title="How to use Hitasura Math">
+                        <p>
+                            Hitasura Math lets you practice prime factorization in short bursts so the steps become
+                            automatic.
+                        </p>
+                    </ArticleSection>
+
+                    <ArticleSection title="Summary">
+                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
+                            <li>Prime factorization uses only primes</li>
+                            <li>Start small, move up by primes</li>
+                            <li>Repetition builds speed</li>
+                        </ul>
+                    </ArticleSection>
+
+                    <ArticleCta
+                        eyebrow="Prime Factorization App"
+                        title="Build prime factorization with the app"
+                        description="Prime factorization practice is currently in development (COMING SOON). We’re building a fast, repeatable learning experience."
+                    />
+                </>
+            ) : (
+                <>
                     <ArticleSection title="素因数分解の勉強でつまずいていませんか？">
                         <ul className="list-inside list-disc space-y-2 text-[#475569]">
                             <li>どこから割ればいいかわからない</li>
@@ -79,93 +201,57 @@ export const PrimeFactorizationStudy = React.memo(function PrimeFactorizationStu
                         </p>
                     </ArticleSection>
 
-                    <ArticleSection title="素因数分解でよくあるミス">
+                    <ArticleSection title="素因数分解の勉強がうまくいかない理由">
                         <ul className="list-inside list-disc space-y-2 text-[#475569]">
-                            <li>いきなり大きな数で割ろうとする</li>
-                            <li>割れるかどうかを毎回考えすぎる</li>
-                            <li>途中で計算ミスに気づけない</li>
+                            <li>どの素数で割るか迷ってしまう</li>
+                            <li>計算ミスに気づけない</li>
+                            <li>パターンを覚えようとしてしまう</li>
                         </ul>
                         <p>
-                            これは理解力の問題ではありません。<strong>慣れと反復の問題</strong>です。
+                            これは理解力の問題ではありません。<strong>勉強法の問題</strong>です。
                         </p>
                     </ArticleSection>
 
-                    <ArticleSection title="「わかる」と「できる」はまったく別">
-                        <p>
-                            解説を読んで「なるほど、わかった」と思っても、スムーズに手が動かない・計算に時間がかかる状態ではテストで使えません。
-                        </p>
-                        <p>
-                            素因数分解は、<strong>見て覚える勉強ではなく、手を動かして慣れる勉強</strong>です。
-                        </p>
-                    </ArticleSection>
-
-                    <ArticleSection title="素因数分解の勉強法｜一番効果が出るやり方">
+                    <ArticleSection title="素因数分解の勉強法">
                         <ul className="list-inside list-disc space-y-2 text-[#475569]">
-                            <li>1回3〜5分</li>
-                            <li>毎日</li>
-                            <li>正解率は気にしない</li>
+                            <li>2・3・5 の順に必ず割ってみる</li>
+                            <li>計算の流れを声に出す</li>
+                            <li>1回3〜5分、毎日反復する</li>
                         </ul>
-                        <p>
-                            大事なのは、<strong>短時間で何度も解くこと</strong>です。長時間まとめてやる必要はありません。
-                        </p>
+                        <p>短時間でも毎日やると、判断が速くなります。</p>
                     </ArticleSection>
 
                     <ArticleSection title="素因数分解の勉強にはアプリ学習が向いている理由">
-                        <p>素因数分解の勉強には、問題集よりもアプリ学習が向いています。理由は次の通りです。</p>
-                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
-                            <li>すぐに問題を解き始められる</li>
-                            <li>丸付けが不要</li>
-                            <li>同じタイプの問題を何度も解ける</li>
-                            <li>間違えてもやり直しやすい</li>
-                        </ul>
+                        <p>素因数分解は、反復練習を積み重ねることで確実に速くなります。</p>
                         <p>
-                            素因数分解は「理解」よりも「反復」が重要なので、<strong>素因数分解アプリの方が勉強量を確保しやすい</strong>のです。
+                            そのため、すぐ問題に取りかかれる・短時間で何度も練習できる<strong>アプリ学習との相性がとても良い</strong>単元です。
                         </p>
                     </ArticleSection>
 
                     <ArticleSection title="ひたすら数学は素因数分解の勉強にどう使う？">
                         <p>
-                            ひたすら数学は、初歩レベルの素因数分解をテンポよく無限に解けるように作られています。
+                            ひたすら数学では、素因数分解を「短い問題」でテンポよく反復できます。
                         </p>
                         <p>
-                            目的は、<strong>考える前に手が動く状態を作ること</strong>です。問題集で挫折した人ほど、無理なく続けやすい設計になっています。
+                            目的は、<strong>素因数分解の流れを自動化すること</strong>です。
                         </p>
-                    </ArticleSection>
-
-                    <ArticleSection title="素因数分解は才能じゃない">
-                        <p>
-                            素因数分解が速い人は、頭が良いからではありません。<strong>見た回数が多いだけ</strong>です。
-                        </p>
-                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
-                            <li>反復した人 → 速くなる</li>
-                            <li>反復していない人 → 手が止まる</li>
-                        </ul>
                     </ArticleSection>
 
                     <ArticleSection title="まとめ｜素因数分解の勉強で一番大切なこと">
                         <ul className="list-inside list-disc space-y-2 text-[#475569]">
-                            <li>素因数分解は素数に分ける操作</li>
-                            <li>中学数学の基礎中の基礎</li>
-                            <li>つまずく原因は練習不足</li>
-                            <li>勉強法は短時間×反復</li>
-                            <li>アプリ学習と相性がいい</li>
+                            <li>素因数分解は「素数だけで表す」こと</li>
+                            <li>2・3・5 の順に割る</li>
+                            <li>反復が最大の近道</li>
                         </ul>
-                    </ArticleSection>
-
-                    <ArticleSection title="最後に">
-                        <p>
-                            もし今、素因数分解が苦手・勉強しても身につかないと感じているなら、必要なのは新しい説明ではなく「解く回数」です。
-                        </p>
-                        <p>
-                            まずは軽く、短く、素因数分解をひたすら解くところから始めてみてください。
-                        </p>
                     </ArticleSection>
 
                     <ArticleCta
                         eyebrow="Prime Factorization App"
-                        title="素因数分解アプリで、毎日の勉強を続けよう"
-                        description="ひたすら数学なら、素因数分解の問題をテンポよく反復できます。短時間で取り組めるので、毎日の学習習慣にもぴったりです。"
+                        title="素因数分解を、アプリで反復しよう"
+                        description="素因数分解は現在開発中です（COMING SOON）。短時間で反復できる学習体験を準備しています。"
                     />
+                </>
+            )}
         </ArticleLayout>
     )
 })

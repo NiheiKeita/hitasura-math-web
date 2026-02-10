@@ -1,106 +1,13 @@
 
 import React from 'react'
+import { Head } from '@inertiajs/react'
 import SiteHeader from '@/Components/SiteHeader'
 import WebFooter from '@/Components/WebFooter'
-
-const APP_STORE_URL = 'https://apps.apple.com/jp/app/%E3%81%B2%E3%81%9F%E3%81%99%E3%82%89%E6%95%B0%E5%AD%A6/id6757374941'
-const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.qboad.hitasura_math'
-
-const feelItems = [
-    {
-        title: '正解の快感',
-        body: '解けるたびに、気持ちよさが増える。',
-    },
-    {
-        title: 'テンポ',
-        body: '次へ、次へ。手が止まらない。',
-    },
-    {
-        title: '集中',
-        body: '画面はシンプル。数学だけに没頭。',
-    },
-]
-
-const modes = [
-    {
-        title: '無限',
-        body: '終わりがないから続く。',
-    },
-    {
-        title: '10問タイムアタック',
-        body: '短時間で燃えるスピード勝負。',
-    },
-    {
-        title: 'easy / normal / hard',
-        body: '好みの強さで挑戦。',
-    },
-]
-
-type ContentItem = {
-    title: string
-    meta: string
-    soon?: boolean
-}
-
-const contents: ContentItem[] = [
-    {
-        title: '因数分解',
-        meta: '基本を軽快に。',
-    },
-    {
-        title: '素因数分解',
-        meta: '分解の手触り。',
-    },
-    {
-        title: '微分・積分',
-        meta: '変化をつかむ。',
-    },
-    {
-        title: '式の展開',
-        meta: '広げる力を鍛える。',
-        soon: true,
-    },
-]
-
-const comingSoon = [
-    {
-        title: 'Ranking',
-        body: '自己ベストと競う。',
-    },
-    {
-        title: 'Calendar',
-        body: 'カレンダーで学習をみる。',
-    },
-    {
-        title: 'More modes',
-        body: '遊び方が広がる。',
-    },
-]
-
-const screenshots = [
-    {
-        label: 'PLAY 01',
-        src: '/images/game_screen/game_1.png',
-        caption: 'やりたいカテゴリを選択',
-    },
-    {
-        label: 'PLAY 02',
-        src: '/images/game_screen/game_2.png',
-        caption: 'やりたいモードを選択',
-    },
-    {
-        label: 'PLAY 03',
-        src: '/images/game_screen/game_3.png',
-        caption: '問題を解く',
-    },
-    {
-        label: 'PLAY 04',
-        src: '/images/game_screen/game_4.png',
-        caption: '結果が出る',
-    },
-]
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from '@/lib/storeUrls'
+import { useI18n, withLocale } from '@/i18n'
 
 export const Dashboard = React.memo(function Dashboard() {
+    const { messages, locale } = useI18n()
     const storeUrl =
         typeof navigator === 'undefined'
             ? APP_STORE_URL
@@ -110,11 +17,25 @@ export const Dashboard = React.memo(function Dashboard() {
                     ? APP_STORE_URL
                     : APP_STORE_URL
 
+    const screenshots = messages.dashboard.screenshots.items.map((item, index) => ({
+        ...item,
+        src: `/images/game_screen/game_${index + 1}.png`,
+    }))
+
     return (
         <div
             className="min-h-screen bg-white text-[#64748B]"
             style={{ fontFamily: '"Zen Kaku Gothic New", "Yu Gothic", sans-serif' }}
         >
+            <Head title={messages.dashboard.metaTitle}>
+                <meta name="description" content={messages.dashboard.metaDescription} />
+                <meta property="og:title" content={messages.dashboard.metaTitle} />
+                <meta property="og:description" content={messages.dashboard.metaDescription} />
+                <meta property="og:type" content="website" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={messages.dashboard.metaTitle} />
+                <meta name="twitter:description" content={messages.dashboard.metaDescription} />
+            </Head>
             <SiteHeader appStoreUrl={APP_STORE_URL} googlePlayUrl={GOOGLE_PLAY_URL} />
 
             <main>
@@ -146,14 +67,14 @@ export const Dashboard = React.memo(function Dashboard() {
                     <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:px-10 md:py-24">
                         <div className="space-y-5">
                             <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
-                                Math game
+                                {messages.dashboard.hero.eyebrow}
                             </p>
                             <h1 className="text-4xl font-extrabold leading-[1.25] text-[#1E3A8A] md:text-6xl md:leading-[1.2]">
-                                <span className="block">ひたすら解く。</span>
+                                <span className="block">{messages.dashboard.hero.titleLine1}</span>
                                 <span className="relative left-2 block">
-                                    ただそれだけ
+                                    {messages.dashboard.hero.titleLine2}
                                     <span className="relative inline-block">
-                                        。
+                                        {messages.dashboard.hero.titlePunctuation}
                                         <span className="bubble pointer-events-none absolute -right-1 -top-1 h-4 w-4 rounded-full bg-[#2DD4BF]/60" />
                                         <span className="bubble bubble-delay-1 pointer-events-none absolute -right-2 top-2 h-3 w-3 rounded-full bg-[#2DD4BF]/50" />
                                         <span className="bubble bubble-delay-2 pointer-events-none absolute -right-0 top-4 h-4 w-4 rounded-full bg-[#2DD4BF]/40" />
@@ -162,7 +83,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                 </span>
                             </h1>
                             <p className="text-base text-[#64748B] md:text-lg">
-                                短い計算で、ひらめきが続く。タップするだけの数学ゲーム。
+                                {messages.dashboard.hero.description}
                             </p>
                             <div className="flex flex-col items-start gap-3 pt-2 sm:flex-row sm:items-center">
                                 <a
@@ -171,12 +92,12 @@ export const Dashboard = React.memo(function Dashboard() {
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    今すぐダウンロード
+                                    {messages.dashboard.hero.cta}
                                 </a>
                                 <div className="flex flex-wrap items-center gap-3">
                                     <a
                                         href={APP_STORE_URL}
-                                        aria-label="App Storeで見る"
+                                        aria-label={messages.siteHeader.appStoreAria}
                                         target="_blank"
                                         rel="noreferrer"
                                     >
@@ -188,7 +109,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                     </a>
                                     <a
                                         href={GOOGLE_PLAY_URL}
-                                        aria-label="Google Playで見る"
+                                        aria-label={messages.siteHeader.googlePlayAria}
                                         target="_blank"
                                         rel="noreferrer"
                                     >
@@ -207,7 +128,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                 <div className="rounded-[26px] bg-white p-3 shadow-inner shadow-black/5">
                                     <img
                                         src="/images/game_top.png"
-                                        alt="ゲーム画面プレビュー"
+                                        alt="Game screen preview"
                                         className="w-full rounded-3xl object-cover"
                                         loading="lazy"
                                     />
@@ -220,14 +141,14 @@ export const Dashboard = React.memo(function Dashboard() {
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10">
                         <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
-                            FEEL
+                            {messages.dashboard.feel.eyebrow}
                         </p>
                         <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
-                            気持ちいい数学
+                            {messages.dashboard.feel.title}
                         </h2>
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
-                        {feelItems.map((item, index) => (
+                        {messages.dashboard.feel.items.map((item, index) => (
                             <div
                                 key={item.title}
                                 className="rounded-3xl bg-white p-6 shadow-[0_12px_30px_rgba(30,58,138,0.08)]"
@@ -249,14 +170,14 @@ export const Dashboard = React.memo(function Dashboard() {
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10">
                         <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
-                            MODES
+                            {messages.dashboard.modes.eyebrow}
                         </p>
                         <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
-                            遊び方を選ぶ
+                            {messages.dashboard.modes.title}
                         </h2>
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
-                        {modes.map((mode) => (
+                        {messages.dashboard.modes.items.map((mode) => (
                             <div
                                 key={mode.title}
                                 className="rounded-3xl bg-white p-6 shadow-[0_12px_30px_rgba(30,58,138,0.06)]"
@@ -274,18 +195,18 @@ export const Dashboard = React.memo(function Dashboard() {
                     <div className="mb-10 flex items-end justify-between">
                         <div>
                             <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
-                                CONTENTS
+                                {messages.dashboard.contents.eyebrow}
                             </p>
                             <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
-                                数学の気持ちよさ
+                                {messages.dashboard.contents.title}
                             </h2>
                         </div>
                         {/* <span className="rounded-full bg-[#2DD4BF] px-4 py-1 text-xs font-semibold text-white">
-                            これから増える
+                            More coming
                         </span> */}
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
-                        {contents.map((item) => (
+                        {messages.dashboard.contents.items.map((item) => (
                             <div
                                 key={item.title}
                                 className="rounded-3xl bg-white p-6 shadow-[0_12px_30px_rgba(30,58,138,0.06)]"
@@ -294,7 +215,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                     <h3 className="text-lg font-semibold text-[#1E3A8A]">
                                         {item.title}
                                     </h3>
-                                    {item.soon ? (
+                                    {'soon' in item && item.soon ? (
                                         <span className="rounded-full bg-[#2DD4BF] px-3 py-1 text-[10px] font-semibold tracking-[0.15em] text-white">
                                             COMING SOON
                                         </span>
@@ -309,10 +230,10 @@ export const Dashboard = React.memo(function Dashboard() {
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-8">
                         <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
-                            SCREENSHOT
+                            {messages.dashboard.screenshots.eyebrow}
                         </p>
                         <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
-                            画面の流れ
+                            {messages.dashboard.screenshots.title}
                         </h2>
                     </div>
                     <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 pr-2 text-sm text-[#1E3A8A]">
@@ -324,7 +245,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                 <div className="aspect-[9/16] w-full overflow-hidden rounded-2xl bg-white p-3 shadow-sm">
                                     <img
                                         src={shot.src}
-                                        alt={`${shot.label} スクリーンショット`}
+                                        alt={`${shot.label} screenshot`}
                                         className="h-full w-full rounded-xl object-cover"
                                         loading="lazy"
                                     />
@@ -341,27 +262,26 @@ export const Dashboard = React.memo(function Dashboard() {
                     <div className="grid gap-8 rounded-3xl bg-[#F8FAFC] p-8 shadow-[0_20px_40px_rgba(30,58,138,0.08)] md:grid-cols-[1.2fr_0.8fr] md:items-center md:p-12">
                         <div>
                             <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
-                                CALENDAR
+                                {messages.dashboard.calendar.eyebrow}
                             </p>
                             <h2 className="mt-3 text-2xl font-bold text-[#1E3A8A] md:text-3xl">
-                                学習の積み上げが見える
+                                {messages.dashboard.calendar.title}
                             </h2>
                             <p className="mt-3 text-sm text-[#64748B] md:text-base">
-                                カレンダーで毎日の学習をひと目で確認。続いている日が増えるほど、勉強の手応えが
-                                見えてきます。
+                                {messages.dashboard.calendar.description}
                             </p>
                         </div>
                         <div className="rounded-3xl border border-[#1E3A8A]/10 bg-white p-6 text-sm text-[#64748B] shadow-[0_12px_30px_rgba(30,58,138,0.06)]">
                             <div className="mt-4 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
                                 <img
                                     src="/images/calendar.jpg"
-                                    alt="学習の積み上げが分かるカレンダー画面"
+                                    alt="Calendar screen showing learning progress"
                                     className="h-full w-full object-cover"
                                     loading="lazy"
                                 />
                             </div>
                             <p className="mt-4 text-xs text-[#94A3B8]">
-                                継続日数が増えるほど、色が広がっていくイメージです。
+                                {messages.dashboard.calendar.note}
                             </p>
                         </div>
                     </div>
@@ -370,14 +290,14 @@ export const Dashboard = React.memo(function Dashboard() {
                 <section className="mx-auto max-w-6xl px-5 py-16 md:px-10">
                     <div className="mb-10">
                         <p className="text-xs font-semibold tracking-[0.3em] text-[#64748B]">
-                            COMING SOON
+                            {messages.dashboard.comingSoon.eyebrow}
                         </p>
                         <h2 className="mt-2 text-3xl font-bold text-[#1E3A8A]">
-                            近日追加予定の機能
+                            {messages.dashboard.comingSoon.title}
                         </h2>
                     </div>
                     <div className="grid gap-6 md:grid-cols-3">
-                        {comingSoon.map((item) => (
+                        {messages.dashboard.comingSoon.items.map((item) => (
                             <div
                                 key={item.title}
                                 className="rounded-3xl bg-white p-6 shadow-[0_12px_30px_rgba(30,58,138,0.06)]"
@@ -394,15 +314,15 @@ export const Dashboard = React.memo(function Dashboard() {
                 <section className="mx-auto max-w-6xl px-5 pb-20 pt-10 md:px-10">
                     <div className="rounded-3xl bg-white p-8 text-center shadow-[0_20px_40px_rgba(30,58,138,0.08)] md:p-12">
                         <h2 className="text-3xl font-extrabold text-[#1E3A8A]">
-                            無料でダウンロード
+                            {messages.dashboard.download.title}
                         </h2>
                         <p className="mt-3 text-sm text-[#64748B]">
-                            ひらめきの気持ちよさを、今すぐ。
+                            {messages.dashboard.download.description}
                         </p>
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
                             <a
                                 href={APP_STORE_URL}
-                                aria-label="App Storeで見る"
+                                aria-label={messages.siteHeader.appStoreAria}
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -414,7 +334,7 @@ export const Dashboard = React.memo(function Dashboard() {
                             </a>
                             <a
                                 href={GOOGLE_PLAY_URL}
-                                aria-label="Google Playで見る"
+                                aria-label={messages.siteHeader.googlePlayAria}
                                 target="_blank"
                                 rel="noreferrer"
                             >
@@ -432,7 +352,7 @@ export const Dashboard = React.memo(function Dashboard() {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                その他のアプリ
+                                {messages.dashboard.download.otherApps}
                             </a>
                         </div>
                     </div>
@@ -440,21 +360,25 @@ export const Dashboard = React.memo(function Dashboard() {
                 <section className="mx-auto max-w-6xl px-5 pb-20 md:px-10">
                     <div className="rounded-3xl border border-[#1E3A8A]/10 bg-[#F8FAFC] p-8 text-center shadow-[0_20px_40px_rgba(30,58,138,0.08)] md:p-12">
                         <p className="text-xs font-semibold tracking-[0.3em] text-[#94A3B8]">
-                            FEEDBACK
+                            {messages.dashboard.feedback.eyebrow}
                         </p>
                         <h2 className="mt-3 text-2xl font-bold text-[#1E3A8A] md:text-3xl">
-                            <span className="block sm:inline">バグや改善点、</span>
-                            <span className="block sm:inline">欲しい機能があれば</span>
+                            <span className="block sm:inline">
+                                {messages.dashboard.feedback.titleLine1}
+                            </span>
+                            <span className="block sm:inline">
+                                {messages.dashboard.feedback.titleLine2}
+                            </span>
                         </h2>
                         <p className="mt-3 text-sm text-[#64748B] md:text-base">
-                            ぜひお問い合わせから教えてください。より良い体験にアップデートしていきます。
+                            {messages.dashboard.feedback.description}
                         </p>
                         <div className="mt-6">
                             <a
-                                href="/feedback"
+                                href={withLocale('/feedback', locale)}
                                 className="inline-flex items-center justify-center rounded-full bg-[#2DD4BF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2DD4BF]/30 transition hover:opacity-90"
                             >
-                                お問い合わせする
+                                {messages.dashboard.feedback.cta}
                             </a>
                         </div>
                     </div>

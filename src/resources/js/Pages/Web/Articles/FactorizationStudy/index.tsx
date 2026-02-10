@@ -2,17 +2,166 @@ import React from 'react'
 import ArticleLayout from '@/Components/ArticleLayout'
 import ArticleCta from '@/Components/ArticleCta'
 import ArticleSection, { ArticleSubsection } from '@/Components/ArticleSection'
+import { useI18n } from '@/i18n'
 
 export const FactorizationStudy = React.memo(function FactorizationStudy() {
+    const { locale } = useI18n()
+    const isEn = locale === 'en'
+
     return (
         <ArticleLayout
-            breadcrumbLabel="因数分解の勉強法"
+            breadcrumbLabel={isEn ? 'How to Study Factorization' : '因数分解の勉強法'}
             eyebrow="Factorization Study Guide"
-            title="因数分解の勉強法まとめ"
-            subtitle="アプリ学習で苦手を克服する完全ガイド"
-            description="因数分解の勉強に悩む中学生向けに、つまずきの原因から具体的な勉強法までを整理。因数分解アプリを使った反復学習のメリットも解説します。"
-            tags={['因数分解 勉強', '因数分解 アプリ', '中学数学']}
+            title={isEn ? 'How to Study Factorization' : '因数分解の勉強法まとめ'}
+            subtitle={
+                isEn
+                    ? 'A complete guide to overcoming weak points with app practice'
+                    : 'アプリ学習で苦手を克服する完全ガイド'
+            }
+            description={
+                isEn
+                    ? 'For junior high students struggling with factorization, this guide covers why it feels hard, how to study, and why app repetition helps.'
+                    : '因数分解の勉強に悩む中学生向けに、つまずきの原因から具体的な勉強法までを整理。因数分解アプリを使った反復学習のメリットも解説します。'
+            }
+            tags={isEn ? ['factorization study', 'factorization app', 'junior high math'] : ['因数分解 勉強', '因数分解 アプリ', '中学数学']}
         >
+            {isEn ? (
+                <>
+                    <ArticleSection title="Stuck on factorization?">
+                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
+                            <li>I learned the method, but I still can’t solve problems</li>
+                            <li>I don’t know where to start</li>
+                            <li>I run out of time on tests</li>
+                        </ul>
+                        <p>It’s not just you. Factorization is one of the most common stumbling points in junior high.</p>
+                        <p>The issue isn’t talent — it’s the study method.</p>
+                    </ArticleSection>
+
+                    <ArticleSection title="What is factorization?">
+                        <p>
+                            Factorization is turning a sum or difference back into a <strong>multiplication form</strong>.
+                        </p>
+                        <p className="rounded-2xl bg-slate-50 p-5 font-mono text-sm text-[#0F172A]">
+                            x<sup>2</sup> + 5x
+                            <br />
+                            x × x + x × 5
+                            <br />
+                            x(x + 5)
+                        </p>
+                        <p>
+                            You’re not doing something new — you’re <strong>reversing the expansion</strong>. That intuition
+                            matters.
+                        </p>
+                    </ArticleSection>
+
+                    <ArticleSection title="Why study factorization (this matters most)">
+                        <p>It’s not just for tests. Factorization has clear purposes.</p>
+                        <ArticleSubsection title="To solve equations">
+                            <p className="rounded-2xl bg-slate-50 p-5 font-mono text-sm text-[#0F172A]">
+                                x<sup>2</sup> + 5x = 0
+                                <br />
+                                x(x + 5) = 0
+                                <br />
+                                x = 0 / x = -5
+                            </p>
+                            <p>In high school math, many topics depend on being able to factor.</p>
+                        </ArticleSubsection>
+                        <ArticleSubsection title="To understand graphs">
+                            <p className="rounded-2xl bg-slate-50 p-5 font-mono text-sm text-[#0F172A]">
+                                y = x(x - 2)
+                                <br />
+                                x = 0 / x = 2
+                            </p>
+                            <p>Factored form lets you see x-intercepts immediately.</p>
+                        </ArticleSubsection>
+                    </ArticleSection>
+
+                    <ArticleSection title="Factorization patterns to learn first">
+                        <p>Don’t try to memorize everything at once. Order matters.</p>
+                        <ArticleSubsection title="1) Factor out a common factor (most important)">
+                            <p className="rounded-2xl bg-slate-50 p-5 font-mono text-sm text-[#0F172A]">
+                                2x + 4
+                                <br />
+                                2(x + 2)
+                            </p>
+                            <p>When you’re stuck, first ask: “Can I factor something out?”</p>
+                        </ArticleSubsection>
+                        <ArticleSubsection title={<span>x<sup>2</sup> + ax + b form</span>}>
+                            <p className="rounded-2xl bg-slate-50 p-5 font-mono text-sm text-[#0F172A]">
+                                x<sup>2</sup> + 5x + 6
+                                <br />
+                                (x + 2)(x + 3)
+                            </p>
+                            <p>Find two numbers that add to 5 and multiply to 6.</p>
+                        </ArticleSubsection>
+                        <ArticleSubsection title="3) Formulas (difference of squares, etc.)">
+                            <p className="rounded-2xl bg-slate-50 p-5 font-mono text-sm text-[#0F172A]">
+                                x<sup>2</sup> - 9
+                                <br />
+                                (x + 3)(x - 3)
+                            </p>
+                            <p>Requires memorization, but shows up less often than the first two.</p>
+                        </ArticleSubsection>
+                    </ArticleSection>
+
+                    <ArticleSection title="Why factorization study often fails">
+                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
+                            <li>Overthinking every problem</li>
+                            <li>Trying to memorize formulas without practice</li>
+                            <li>Not enough problems solved</li>
+                        </ul>
+                        <p>This is not about ability — it’s about volume and method.</p>
+                    </ArticleSection>
+
+                    <ArticleSection title="Understanding vs. being able to do it">
+                        <p>
+                            “I get it” and “I can solve it quickly” are different. You need repetition to turn
+                            understanding into speed.
+                        </p>
+                    </ArticleSection>
+
+                    <ArticleSection title="How to study factorization effectively">
+                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
+                            <li>Start by checking for a common factor</li>
+                            <li>Then check the x<sup>2</sup> + ax + b pattern</li>
+                            <li>Only then use formulas</li>
+                            <li>Repeat short sessions daily</li>
+                        </ul>
+                        <p>Short, daily repetition beats long, infrequent study sessions.</p>
+                    </ArticleSection>
+
+                    <ArticleSection title="Why app practice works well">
+                        <p>Factorization needs pattern recognition and repetition.</p>
+                        <p>
+                            That’s why <strong>app practice is a perfect fit</strong>: you can solve many short problems and
+                            reinforce the same patterns quickly.
+                        </p>
+                    </ArticleSection>
+
+                    <ArticleSection title="How to use Hitasura Math">
+                        <p>
+                            Hitasura Math lets you practice factorization in short bursts. The goal is to build the habit
+                            of instantly seeing the pattern.
+                        </p>
+                    </ArticleSection>
+
+                    <ArticleSection title="Summary: the most important points">
+                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
+                            <li>Factorization is reversing expansion</li>
+                            <li>Start with common factors</li>
+                            <li>Memorization alone isn’t enough</li>
+                            <li>Short repetition builds speed</li>
+                        </ul>
+                    </ArticleSection>
+
+                    <ArticleCta
+                        eyebrow="Factorization App"
+                        title="Make factorization a habit with the app"
+                        description="Factorization practice is currently in development (COMING SOON). We’re building a fast, repeatable learning experience."
+                    />
+                </>
+            ) : (
+                <>
                     <ArticleSection title="因数分解の勉強でつまずいていませんか？">
                         <ul className="list-inside list-disc space-y-2 text-[#475569]">
                             <li>因数分解のやり方は習ったはずなのに解けない</li>
@@ -118,80 +267,55 @@ export const FactorizationStudy = React.memo(function FactorizationStudy() {
 
                     <ArticleSection title="「わかる」と「できる」はまったく別">
                         <p>
-                            解説を読んで「なるほど」と思っても、何も見ずに解けない・解くのに時間がかかる状態ではテストで使えません。
+                            因数分解は「わかる」だけでは意味がありません。「自分で手が動く」状態にすることが大切です。
                         </p>
                         <p>
-                            因数分解は、<strong>見て理解する勉強ではなく、手を動かす勉強</strong>です。
+                            つまり、<strong>反復練習で体に覚えさせる</strong>必要があります。
                         </p>
                     </ArticleSection>
 
-                    <ArticleSection title="因数分解の勉強法｜一番効果が出るやり方">
+                    <ArticleSection title="因数分解の勉強法（具体的な流れ）">
                         <ul className="list-inside list-disc space-y-2 text-[#475569]">
-                            <li>1回3〜5分</li>
-                            <li>毎日</li>
-                            <li>正解率は気にしない</li>
+                            <li>まず共通因数でくくれるか考える</li>
+                            <li>次に x<sup>2</sup> + ax + b 型を疑う</li>
+                            <li>最後に公式（平方差など）を使う</li>
+                            <li>1回3〜5分、毎日反復する</li>
                         </ul>
-                        <p>
-                            長時間まとめてやるよりも、短時間で何度も解くほうが圧倒的に効果があります。
-                        </p>
+                        <p>短い時間でいいので、毎日繰り返すことが最大の近道です。</p>
                     </ArticleSection>
 
                     <ArticleSection title="因数分解の勉強にはアプリ学習が向いている理由">
-                        <p>因数分解の勉強には、問題集よりもアプリ学習が向いています。理由はとてもシンプルです。</p>
-                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
-                            <li>すぐ始められる</li>
-                            <li>丸付けが不要</li>
-                            <li>同じパターンを何度も解ける</li>
-                            <li>間違えてもストレスが少ない</li>
-                        </ul>
+                        <p>因数分解は、判断スピードと反復回数が必要な単元です。</p>
                         <p>
-                            因数分解は「理解」よりも「反復」が重要な分野です。そのため、因数分解アプリの方が勉強量を確保しやすくなります。
+                            だからこそ、すぐ取り組める・短時間で何度も解ける<strong>アプリ学習との相性が抜群</strong>です。
                         </p>
                     </ArticleSection>
 
                     <ArticleSection title="ひたすら数学は因数分解の勉強にどう使う？">
                         <p>
-                            ひたすら数学は、初歩レベルの因数分解をテンポよく無限に解けるように作られています。
+                            ひたすら数学では、因数分解を「短い問題」でテンポよく反復できます。
                         </p>
                         <p>
-                            目的は、<strong>考える前に手が動く状態を作ること</strong>です。問題集で挫折した人ほど、効果を実感しやすい設計です。
+                            目的は、<strong>因数分解の流れを自動化すること</strong>です。
                         </p>
-                    </ArticleSection>
-
-                    <ArticleSection title="因数分解は才能じゃない">
-                        <p>
-                            因数分解が速い人は、頭が良いわけではありません。<strong>見た回数が多いだけ</strong>です。
-                        </p>
-                        <ul className="list-inside list-disc space-y-2 text-[#475569]">
-                            <li>反復した人 → 速くなる</li>
-                            <li>反復していない人 → 止まる</li>
-                        </ul>
                     </ArticleSection>
 
                     <ArticleSection title="まとめ｜因数分解の勉強で一番大切なこと">
                         <ul className="list-inside list-disc space-y-2 text-[#475569]">
-                            <li>因数分解は元に戻す操作</li>
-                            <li>目的は方程式とグラフ</li>
-                            <li>つまずく原因は練習不足</li>
-                            <li>勉強法は短時間×反復</li>
-                            <li>アプリ学習と相性がいい</li>
+                            <li>因数分解は「元に戻す」作業</li>
+                            <li>まず共通因数でくくる</li>
+                            <li>丸暗記より反復</li>
+                            <li>短時間でも毎日続ける</li>
                         </ul>
-                    </ArticleSection>
-
-                    <ArticleSection title="最後に">
-                        <p>
-                            もし今、因数分解が苦手・勉強しても身につかないと感じているなら、必要なのは新しい説明ではなく「解く回数」です。
-                        </p>
-                        <p>
-                            まずは軽く、短く、ひたすら解くところから始めてみてください。
-                        </p>
                     </ArticleSection>
 
                     <ArticleCta
                         eyebrow="Factorization App"
-                        title="因数分解アプリで、毎日の勉強を続けよう"
-                        description="ひたすら数学なら、因数分解の問題をテンポよく反復できます。短時間で取り組めるので、毎日の学習習慣にもぴったりです。"
+                        title="因数分解の勉強を、アプリで習慣に"
+                        description="因数分解は現在開発中です（COMING SOON）。短時間で反復できる学習体験を準備しています。"
                     />
+                </>
+            )}
         </ArticleLayout>
     )
 })
